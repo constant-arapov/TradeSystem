@@ -1,0 +1,290 @@
+﻿<UserControl x:Class="GUIComponents.Controls.ControlBotGUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"        
+             mc:Ignorable="d" 
+             d:DesignHeight="525" d:DesignWidth="220"             
+             xmlns:components="clr-namespace:GUIComponents"
+             x:FieldModifier="public"
+             xmlns:guiCompControls="clr-namespace:GUIComponents.Controls"
+             x:Name="ControlBotGUIInst">
+             
+
+    <UserControl.Resources>
+        <Style x:Key="EnabledStyleEllipse" x:Name="EnabledStyleEllipse" TargetType="Ellipse">              
+            <Style.Triggers>
+                <DataTrigger   Binding="{Binding Path=DisabledBot}" Value="False">
+                    <Setter Property="Fill" Value="Green"></Setter>
+                   <!-- <Setter Property="Text" Value="ОТКЛ."></Setter>-->
+                </DataTrigger>
+
+                <DataTrigger   Binding="{Binding Path=DisabledBot}" Value="True">
+                    <Setter Property="Fill" Value="Red"></Setter>
+                   <!-- <Setter Property="Text" Value="ВКЛ."></Setter>-->
+                </DataTrigger>
+
+
+            </Style.Triggers>
+            
+        </Style>
+
+        <Style x:Key="StyleReadyEllipse" x:Name="StyleReadyEllipse" TargetType="Ellipse">
+            <Style.Triggers>
+                <DataTrigger   Binding="{Binding Path=IsReadyForRecalcBotLogics}" Value="True">
+                    <Setter Property="Fill" Value="Green"></Setter>
+                    <!-- <Setter Property="Text" Value="ОТКЛ."></Setter>-->
+                </DataTrigger>
+
+                <DataTrigger   Binding="{Binding Path=IsReadyForRecalcBotLogics}" Value="False">
+                    <Setter Property="Fill" Value="Red"></Setter>
+                    <!-- <Setter Property="Text" Value="ВКЛ."></Setter>-->
+                </DataTrigger>
+
+
+            </Style.Triggers>
+
+        </Style>
+
+
+
+
+
+
+        <Style x:Key="EnabledTextBlock" x:Name="EnabledTextBlock" TargetType="TextBlock">
+            <Style.Triggers>
+                <DataTrigger   Binding="{Binding Path=DisabledBot}" Value="False">                   
+                    <Setter Property="Text" Value="ВКЛ."></Setter>
+                </DataTrigger>
+
+                <DataTrigger   Binding="{Binding Path=DisabledBot}" Value="True">           
+                     <Setter Property="Text" Value="ОТКЛ."></Setter>
+                </DataTrigger>
+
+
+            </Style.Triggers>
+
+        </Style>
+
+
+        <Style x:Key="StyleTextReady" x:Name="StyleTextReady" TargetType="TextBlock">
+            <Style.Triggers>
+                <DataTrigger   Binding="{Binding Path=IsReadyForRecalcBotLogics}" Value="True">
+                    <Setter Property="Text" Value="Готов"></Setter>
+                </DataTrigger>
+
+                <DataTrigger   Binding="{Binding Path=IsReadyForRecalcBotLogics}" Value="False">
+                    <Setter Property="Text" Value="Не готов"></Setter>
+                </DataTrigger>
+
+
+            </Style.Triggers>
+
+        </Style>
+
+
+
+
+        <Style x:Key="StyleEnableBot" x:Name="EnabledEnableBot" TargetType="guiCompControls:ButtonBot">
+            <Style.Triggers>
+                <DataTrigger   Binding="{Binding Path=DisabledBot}" Value="False">
+                    <Setter Property="IsEnabled" Value="False"></Setter>
+                </DataTrigger>
+                <DataTrigger   Binding="{Binding Path=DisabledBot}" Value="True">
+                    <Setter Property="IsEnabled" Value="True"></Setter>
+                </DataTrigger>
+            </Style.Triggers>                                    
+        </Style>
+
+        <Style x:Key="StyleDisableBot" x:Name="StyleDisableBot" TargetType="guiCompControls:ButtonBot">
+            <Style.Triggers>
+                <DataTrigger   Binding="{Binding Path=DisabledBot}" Value="True">
+                    <Setter Property="IsEnabled" Value="False"></Setter>
+                </DataTrigger>
+                <DataTrigger   Binding="{Binding Path=DisabledBot}" Value="False">
+                    <Setter Property="IsEnabled" Value="True"></Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="StyleManualControl" x:Name="StyleManual" TargetType="guiCompControls:ButtonBot">
+            <!-- 2018-02-27 tempo for debugging-->
+            <!--<Style.Triggers>
+                <DataTrigger   Binding="{Binding Path=DisabledBot}" Value="False">
+                    <Setter Property="IsEnabled" Value="False"></Setter>
+                </DataTrigger>
+                <DataTrigger   Binding="{Binding Path=DisabledBot}" Value="True">
+                    <Setter Property="IsEnabled" Value="True"></Setter>
+                </DataTrigger>
+            </Style.Triggers>-->
+        </Style>
+
+
+
+
+
+
+
+    </UserControl.Resources>
+
+
+
+        <GroupBox Background="Gainsboro">
+        <StackPanel Margin="0,3,0,0">
+            <Border  Background="Blue" CornerRadius="3" HorizontalAlignment="Stretch">
+                <TextBlock Margin="0,2,0,2"  Foreground="White" Text="{Binding Name, FallbackValue='undefined'}"   HorizontalAlignment="Center" />
+            </Border>
+
+
+             <!--   <TextBlock  Background="Blue"   Foreground="White" Text="{Binding Name, FallbackValue='Test'}"   HorizontalAlignment="Stretch" />-->
+            <Grid Margin="0,4,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Ellipse   Name="EllipseEnabled" x:FieldModifier="public" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1"    Width="10" Height="10" Margin="3,0,3,0"  Style="{StaticResource EnabledStyleEllipse}" HorizontalAlignment="Left" VerticalAlignment="Center"></Ellipse>
+                <TextBlock Name="TextEnabled" x:FieldModifier="public" Grid.Row="0"    Grid.Column="1" Grid.ColumnSpan="1"   Style="{StaticResource EnabledTextBlock}"  HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+                <Ellipse   Name="EllipseReady" x:FieldModifier="public" Grid.Row="0"   Grid.Column="2" Grid.ColumnSpan="1"    Width="10" Height="10" Margin="3,0,3,0"  Style="{StaticResource StyleReadyEllipse}" HorizontalAlignment="Left" VerticalAlignment="Center"></Ellipse>
+                <TextBlock Name="TextReady" x:FieldModifier="public" Grid.Row="0"      Grid.Column="3" Grid.ColumnSpan="3"   Style="{StaticResource StyleTextReady}"  HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+
+
+                <!-- TO DO one button for enable disable -->
+                <guiCompControls:ButtonBot x:Name="ButtonLoadBot" x:FieldModifier="public"   Grid.Row="0" Grid.Column="4" FontSize="10" Click="ButtonLoadBot_Click" ToolTip="Загрузить бота" Visibility="Hidden">L
+                </guiCompControls:ButtonBot>
+
+                <guiCompControls:ButtonBot  x:Name="ButtonUnloadBot" x:FieldModifier="public" Grid.Row="0" Grid.Column="5" FontSize="10" Click="ButtonUnloadBot_Click" ToolTip="Выгрузить бота" Visibility="Hidden">U
+                </guiCompControls:ButtonBot>
+
+                <guiCompControls:ButtonBot x:Name="ButtonEnableBot" x:FieldModifier="public" Grid.Row="0" Grid.Column="6" FontSize="10" Style="{StaticResource StyleEnableBot}" Click="ButtonEnableBot_Click"  ToolTip="Вкл. бота">E</guiCompControls:ButtonBot>
+                <guiCompControls:ButtonBot x:Name="ButtonDisableBot" x:FieldModifier="public" Grid.Row="0" Grid.Column="7" FontSize="10" Style="{StaticResource StyleDisableBot}"  Click="ButtonDisableBot_Click" ToolTip="Откл. бота">D</guiCompControls:ButtonBot>
+
+                <guiCompControls:ButtonBot x:Name="ButtonPosLog"  x:FieldModifier="public"  Grid.Row="0" Grid.Column="8" Grid.ColumnSpan="1" Click="BotPosButton_Click"  FontSize="10" VerticalAlignment="Center" ToolTip="История торговли">H</guiCompControls:ButtonBot >
+                <guiCompControls:ButtonBot x:Name="ButtonManualControl"      x:FieldModifier="public"    Grid.Row="0" Grid.Column="9"   Style="{StaticResource StyleManualControl}" FontSize="10" VerticalAlignment="Center" Click="ManualControl_Click"  ToolTip="Ручное управление">M</guiCompControls:ButtonBot>
+
+
+
+            </Grid>
+
+            <Grid Name="GridSettings" x:FieldModifier="public" Margin="5,10,5,0"  Height="65" >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+
+                </Grid.RowDefinitions>
+              
+
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <!--
+                <components:ControlSettingsDataBlock Canvas.ZIndex="1" Margin="2,2,0,0" HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Width="Auto"  VerticalAlignment="Center"
+                                                       SettingLabelText="Инстр:"></components:ControlSettingsDataBlock>
+                -->
+                
+             <Border   Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="4" Background="Gray" CornerRadius="5"></Border>
+               
+
+
+            </Grid>
+         
+            <Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                </Grid>
+                
+            <Border Height="20" Background="Gray" Margin="5,4,5,0" CornerRadius="3">
+                    <guiCompControls:ControlSettingsDataBlock x:Name="BotSate" x:FieldModifier="public" Canvas.ZIndex="1" Margin="2,2,0,0" HorizontalAlignment="Left" Width="200"    VerticalAlignment="Stretch"
+                                                       SettingLabelText="Состояние:" SettingValueText="{Binding Path=BotState}" 
+                                                      SettingLabelCols="2" SettingValueCols="5"
+                                                     Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" 
+                                                     Grid.ColumnSpan="1">
+
+                    </guiCompControls:ControlSettingsDataBlock >
+
+            </Border>
+          
+            </Grid>
+
+            <GroupBox  Header="Позиции" Name="PosGroupBox" FontWeight="Bold" HorizontalAlignment="Stretch">
+
+            <DataGrid  Name="MonitorPos" x:FieldModifier="public" Style="{StaticResource DataGridStyle}"   HorizontalAlignment="Left" AutoGenerateColumns="False" FontSize="10" IsReadOnly="True" Margin="0,0,0,0" ToolTip="Позиции бота" >
+                 
+                    <DataGrid.Columns>
+                    <DataGridTextColumn Header="Инст" Binding="{Binding Id}" Width="Auto" />
+                    <DataGridTextColumn Header="К" Binding="{Binding Amount}" Width="Auto"/>
+                    <DataGridTextColumn Header="Ср.цен" Binding="{Binding AvPosString}" Width="Auto" x:Name="AvPos"/>
+                    <DataGridTextColumn Header="пп" Binding="{Binding VMCurrent_Points, StringFormat='0.00'}" Width="Auto"/>
+                    <DataGridTextColumn Header="ВМ" Binding="{Binding VMCurrent_RUB, StringFormat='0.00'}" Width="Auto"/>
+
+            </DataGrid.Columns>
+                
+                    
+                    
+           </DataGrid>
+            </GroupBox>
+
+
+
+            <GroupBox  Header="Ордеры" Name="OrdersGroupBox" FontWeight="Bold" >
+                <DataGrid  Name="Orders" x:FieldModifier="public" Style="{StaticResource DataGridStyle}" HorizontalAlignment="Left" AutoGenerateColumns="False" FontSize="10" IsReadOnly="True" Margin="0,0,0,0" ToolTip="Открытые ордеры бота" >
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Время" Binding="{Binding Moment, StringFormat='HH:mm:ss'}" Width="Auto" />
+                        <DataGridTextColumn Header="Инст" Binding= "{Binding Isin}" Width="Auto" />
+                        <DataGridTextColumn Header="Нап" Binding="{Binding Dir}" Width="Auto" />
+                        <DataGridTextColumn Header="К" Binding="{Binding Amount}" Width="Auto" />
+                        <DataGridTextColumn Header="Цена" Binding="{Binding Price,StringFormat='0.00'}" Width="Auto" />
+
+
+
+
+                    </DataGrid.Columns>
+
+
+                </DataGrid>
+            </GroupBox>
+    
+        </StackPanel>
+
+        
+            
+        
+
+    </GroupBox>
+       
+
+    
+
+    
+</UserControl>

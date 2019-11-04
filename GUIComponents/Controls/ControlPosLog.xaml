@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="GUIComponents.Controls.ControlPosLog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500"
+             x:FieldModifier="public"
+             x:Name="NameControlPosLog"
+             >
+    <Grid  >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+
+
+
+
+        <DataGrid Grid.Row="0"  Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2"  Name="PosLog"  Style="{StaticResource DataGridStyle}"  
+                x:FieldModifier="public"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" AutoGenerateColumns="False" FontSize="10" IsReadOnly="True" Margin="0,10,0,0" ToolTip="История торговли" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Вр. откр"  Binding="{Binding DtOpen,  StringFormat='dd.MM.yyyy HH:mm:ss'}" Width="Auto" />
+                <DataGridTextColumn Header="Вр. закр"  Binding="{Binding DtClose, StringFormat='dd.MM.yyyy HH:mm:ss'}" Width="Auto" />
+                <DataGridTextColumn Header="Инстр."  Binding="{Binding Isin}" Width="Auto" />
+                <DataGridTextColumn Header="Напр."  Binding="{Binding BuySell}" Width="Auto" />
+                <DataGridTextColumn Header="Цена откр"  Binding="{Binding PriceOpen,  StringFormat='0'}" Width="Auto" />
+                <DataGridTextColumn Header="Цена закр"  Binding="{Binding PriceClose,  StringFormat='0'}" Width="Auto" />
+                <DataGridTextColumn Header="К"          Binding="{Binding CloseAmount,  StringFormat='0'}" Width="Auto" />
+                <DataGridTextColumn Header="ВМ. пп"  Binding="{Binding VMClosed_Points,  StringFormat='0'}" Width="Auto" />
+                <DataGridTextColumn Header="ВМ. шг"  Binding="{Binding VMClosed_Steps, StringFormat='0'}" Width="Auto" />
+                <DataGridTextColumn Header="ВМ. руб"  Binding="{Binding VMClosed_RUB, StringFormat='0.00'}" Width="Auto" />
+                
+                
+                
+
+
+
+
+            </DataGrid.Columns>
+            
+            
+        </DataGrid>
+
+
+    </Grid>
+</UserControl>

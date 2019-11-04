@@ -1,0 +1,13 @@
+﻿<Window x:Class="TradeSystem.View.WindowCandleChart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WindowCandleChart"  
+         xmlns:view="clr-namespace:TradeSystem.View" >
+    <Grid>
+        <view:ControlCandleStickChart x:Name="CandleChartFrame" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></view:ControlCandleStickChart>
+
+
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,9 @@
+﻿<Window x:Class="ClientGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ClientGUI"
+        Title="MainWindow" Height="600" Width="525">
+    <Grid>
+        <local:ControlStock x:Name="Stock"></local:ControlStock>
+    </Grid>
+</Window>

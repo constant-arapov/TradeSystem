@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Terminal.Controls.ChildWindows.ControlAuthForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="300"
+             xmlns:local="clr-namespace:Terminal"
+             xmlns:events="clr-namespace:Terminal.Events"
+             Background="Snow">
+    <StackPanel>
+        <Label HorizontalAlignment="Center" FontFamily="Tahoma" Content="ФОРТС" FontSize="16" FontWeight="Bold" Foreground="Blue" Name="LabelStockName"/>
+        
+        
+        <Label HorizontalAlignment="Center" Content="" Name="LabelStatus" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" FontWeight="DemiBold"
+               HorizontalAlignment="Right">
+                Номер счета</Label>
+
+            <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontWeight="DemiBold"
+               HorizontalAlignment="Right">
+                Пароль</Label>
+
+            <TextBox Name="InputLogin" Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center"  
+                  Margin="10, 0,10,0"/>
+
+
+            <PasswordBox Name="InputPassword" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Center"  
+                  Margin="10,0,10,0"/>
+
+            <Button Name="ButtonConnect" Grid.Row="2" Grid.Column="1" Margin="20,10,10,30" Height="30" Content="Подключить" Click="Button_Click"
+                    Command="events:EventsGUI.ConnectToServer" CommandParameter="{Binding ParamInst}" Background="Green" Foreground="White"
+                    FontWeight="SemiBold" Focusable="False"></Button>
+
+        </Grid>
+
+
+
+    </StackPanel>
+</UserControl>

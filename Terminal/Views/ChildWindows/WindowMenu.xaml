@@ -1,0 +1,42 @@
+﻿<Window x:Class="Terminal.Views.ChildWindows.WindowMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  
+        Title="WindowMenu"          
+        Width="150" Height="80"
+        WindowStyle="None"
+        BorderThickness="0"
+        AllowsTransparency="True"
+        PreviewMouseMove="Window_PreviewMouseMove"
+        Loaded="Window_Loaded"
+        >
+    <Grid>
+        <Border Background="Blue" CornerRadius="0,0,10,10" BorderThickness="1,0,1,1" BorderBrush="White">
+
+
+            <DockPanel VerticalAlignment="Center">
+
+                <DockPanel  DockPanel.Dock="Top" HorizontalAlignment="Center">
+                    <Button x:Name="ButtonVM" DockPanel.Dock="Left"  Width="55" Height="25" Background="Blue" Content="Финрез" Foreground="White" FontSize="10" FontWeight="Bold" Click="Button_Click" />
+                    <Button x:Name="ButtonPositions" DockPanel.Dock="Left"  Width="55" Height="25" Background="Blue" Content="Позиции" Foreground="White" FontSize="10" FontWeight="Bold" Click="Button_Click" />
+                </DockPanel>
+                <DockPanel  DockPanel.Dock="Top" HorizontalAlignment="Center">
+                    <Button x:Name="ButtonMoney" DockPanel.Dock="Left"  Width="55" Height="25" Background="Blue" Content="Средства" Foreground="White" FontSize="10" FontWeight="Bold" Click="Button_Click" />
+                    <Button x:Name="ButtonDeals" DockPanel.Dock="Left"  Width="55" Height="25" Background="Blue" Content="Сделки" Foreground="White" FontSize="10" FontWeight="Bold" Click="Button_Click"/>
+                </DockPanel>
+
+
+            </DockPanel>
+            <!--
+                <Button  Width="55" Height="25" Background="Green" Content="Позиции" Foreground="White" FontSize="10" FontWeight="Bold" />                 
+                <Button  Width="55" Height="25" Background="Green" Content="Сделки" Foreground="White" FontSize="10" FontWeight="Bold" />
+                -->
+           
+           
+            
+            
+            
+        </Border>
+    </Grid>
+</Window>

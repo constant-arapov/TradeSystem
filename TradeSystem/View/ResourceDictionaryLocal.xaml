@@ -1,0 +1,143 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:charting="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit">
+    <Style x:Key="CandleStick" TargetType="charting:BubbleDataPoint">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate
+                            TargetType="charting:BubbleDataPoint">
+                    <Border>
+                        <Grid>
+                            <Rectangle x:Name="Wick" Width="2">
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="{Binding Path=CandleColor}" />
+                                </Rectangle.Fill>
+                            </Rectangle>
+
+                            <ToolTipService.ToolTip>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0" Orientation="Vertical">
+                                        <ContentControl Content="Open " />
+                                        <ContentControl Content="High " />
+                                        <ContentControl Content="Low " />
+                                        <ContentControl Content="Close " />
+                                        <ContentControl Content="Volume " />
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" Orientation="Vertical">
+                                        <ContentControl Content="{Binding Path=Open}" />
+                                        <ContentControl Content="{Binding Path=High}" />
+                                        <ContentControl Content="{Binding Path=Low}" />
+                                        <ContentControl Content="{Binding Path=Close}" />
+                                        <ContentControl Content="{Binding Path=Volume}" />
+                                    </StackPanel>
+
+                                </Grid>
+                            </ToolTipService.ToolTip>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="CandleStickBody" TargetType="charting:BubbleDataPoint">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate
+                            TargetType="charting:BubbleDataPoint">
+                    <Border Visibility="Visible"  x:Name="Brd">
+                        <Grid ShowGridLines="True">
+                            <Rectangle x:Name="Wick" Width="10" StrokeThickness="2">  
+                                <Rectangle.Stroke>
+                                    <SolidColorBrush Color="{Binding Path=CandleColor}" />
+                                    
+                                </Rectangle.Stroke>
+                                
+                                <Rectangle.Fill>
+                                    <SolidColorBrush Color="{Binding Path=FillColor}" />
+                                </Rectangle.Fill>
+                            </Rectangle>
+                         
+                            <ToolTipService.ToolTip>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0" Orientation="Vertical">
+                                        <ContentControl Content="Open " />
+                                        <ContentControl Content="High " />
+                                        <ContentControl Content="Low " />
+                                        <ContentControl Content="Close " />
+                                        <ContentControl Content="Volume " />
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" Orientation="Vertical">
+                                        <ContentControl Content="{Binding Path=Open}" />
+                                        <ContentControl Content="{Binding Path=High}" />
+                                        <ContentControl Content="{Binding Path=Low}" />
+                                        <ContentControl Content="{Binding Path=Close}" />
+                                        <ContentControl Content="{Binding Path=Volume}" />
+                                    </StackPanel>
+
+                                </Grid>
+                            </ToolTipService.ToolTip>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+   
+
+    <Style x:Key="DealsStyle" TargetType="charting:BubbleDataPoint">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate
+                            TargetType="charting:BubbleDataPoint">
+                    <Border Visibility="Visible"  x:Name="Brd">
+                        <Grid ShowGridLines="True">
+                            <Image Width="15" Height="15" Source="{Binding Path= PathFile}"></Image>
+                            <Ellipse  Height="20" Width="20" Stroke="{Binding Path=ColorOfSeries}" StrokeThickness="3">
+                            </Ellipse>
+
+                            <ToolTipService.ToolTip>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0" Orientation="Vertical">
+                                        <ContentControl Content="Date: " />
+                                        <ContentControl Content="Price: " />
+                                        <ContentControl Content="BotName: " />
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" Orientation="Vertical">
+                                        <ContentControl Content="{Binding Path=Date}" />
+                                        <ContentControl Content="{Binding Path=Price}" />
+                                        <ContentControl Content="{Binding Path=BotName}" />
+                                    </StackPanel>
+
+                                </Grid>
+                            </ToolTipService.ToolTip>
+
+
+
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
+
+</ResourceDictionary>

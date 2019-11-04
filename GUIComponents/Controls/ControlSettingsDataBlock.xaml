@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="GUIComponents.Controls.ControlSettingsDataBlock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="100"
+             xmlns:controls="clr-namespace:GUIComponents.Controls">
+    
+    <Grid Background="Gray">
+        <Grid.RowDefinitions>
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition> <!-- 0-->
+            <ColumnDefinition></ColumnDefinition> <!-- 1-->
+            <ColumnDefinition></ColumnDefinition> <!-- 2-->
+            <ColumnDefinition></ColumnDefinition> <!-- 3-->
+            <ColumnDefinition></ColumnDefinition> <!-- 4-->
+            <ColumnDefinition></ColumnDefinition> <!-- 5-->
+            <ColumnDefinition></ColumnDefinition> <!-- 6-->
+        </Grid.ColumnDefinitions>
+
+
+
+        <controls:ControlTextBlock  x:Name="LabelText"  Grid.Column="0" Grid.ColumnSpan="{Binding Path=SettingLabelCols}"  TextBackgroundColor="Gray" TextForegroundColor="Black" HorizontalAlignment="Left" Margin="3,0,0,0"
+                                    TextValue="{Binding Path=SettingLabelText}" TextFontSize="9" TextFontWeight="Bold"/>
+        <controls:ControlTextBlock x:Name="LabelValue"  Grid.Column="{Binding Path=SettingLabelCols}"  Grid.ColumnSpan="{Binding Path=SettingValueCols}"  TextBackgroundColor="Gray" TextForegroundColor="Black" HorizontalAlignment="Left" 
+                                   TextValue="{Binding Path=SettingValueText}" TextFontSize="9"  TextFontWeight="Normal"/>
+
+
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,38 @@
+﻿<Window x:Class="TradeManager.Views.ProcFeeDealingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TradeManager.Views"
+        mc:Ignorable="d"
+        Title="Сбор с лимитных ордеров" Height="300" Width="300">
+    <DockPanel>
+
+        <DockPanel DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <TextBlock Text="Торговый счет: "    DockPanel.Dock="Left" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=StyleChildWinTextBlock}" />
+            <TextBlock Text="{Binding Path=number}"   DockPanel.Dock="Left" HorizontalAlignment="Right"  Style="{StaticResource ResourceKey=StyleChildWinTextBlock}"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <TextBlock Text="Трейдер: "    DockPanel.Dock="Left" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=StyleChildWinTextBlock}" />
+            <TextBlock Text="{Binding Path=name}" DockPanel.Dock="Left" HorizontalAlignment="Right" Style="{StaticResource ResourceKey=StyleChildWinTextBlock}" />
+        </DockPanel>
+
+        <DockPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <Button x:Name="ButtonCancell" Width="60" Height="25" Content="Отмена" DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="0,0,5,0" Click="ButtonCancell_Click"  />
+            <Button x:Name="ButtonSet" Width="60" Height="26" Content="Задать" DockPanel.Dock="Left" HorizontalAlignment="Right" Margin="5,0,0,0" Click="ButtonSet_Click"  />
+        </DockPanel>
+
+        <DockPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0,0,0,0">
+            
+            <TextBlock Text="Сбор с лимитных ордеров, %."  Width="160" Height="50" TextWrapping="Wrap"   DockPanel.Dock="Left" HorizontalAlignment="Left" Style="{StaticResource ResourceKey=StyleChildWinTextBlock}"/>
+            <TextBox x:Name="TextBoxNewVal" Text="{Binding Path = proc_fee_dealing, Mode=OneWay, StringFormat={}{0:n3}}" 
+                     Margin="-10,0,0,9"
+                     Width="70"  DockPanel.Dock="Left" HorizontalAlignment="Left"  
+                     Style="{StaticResource ResourceKey=StyleChildWinTextBox}"/>
+                
+        </DockPanel>
+
+
+
+    </DockPanel>
+</Window>

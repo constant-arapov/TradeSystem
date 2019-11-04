@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="591fa17c-3e41-4241-8fe0-e8a5947883f7">
+    <Name>Kind Of Magic</Name>
+    <Author>Lex Lavnikov</Author>
+    <Version>1.2.2</Version>
+    <Description xml:space="preserve">Effortless INotifyPropertyChanged</Description>
+    <Locale>1033</Locale>
+    <MoreInfoUrl>http://kindofmagic.codeplex.com</MoreInfoUrl>
+    <License>licence.txt</License>
+    <InstalledByMsi>false</InstalledByMsi>
+    <SupportedProducts>
+      <VisualStudio Version="10.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+      </VisualStudio>
+      <VisualStudio Version="11.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="2.0" MaxVersion="4.5" />
+  </Identifier>
+  <References>
+    <Reference Id="Microsoft.VisualStudio.MPF" MinVersion="10.0">
+      <Name>Visual Studio MPF</Name>
+    </Reference>
+  </References>
+  <Content>
+    <VsPackage>KindOfMagic.VS.pkgdef</VsPackage>
+  </Content>
+</Vsix>

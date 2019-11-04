@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:shell="http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell">
+
+
+    <Style x:Key="StyleDefaultDatagridColumnHeader" x:Name="StyleDefaultDatagridColumnHeader" TargetType="DataGridColumnHeader">
+        <Setter Property="Background" Value="#FF002FFF"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="Padding" Value="5,0,0,0"/>
+        <Setter Property="FontSize" Value="14"></Setter>
+    </Style>
+
+    <Style x:Key="StyleDefaultDatagridRow" x:Name="StyleDefaultDatagridRow" TargetType="DataGridRow">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver"
+                           Value="True">
+                <Setter Property="Background" Value="#A0007FFF" />
+                <Setter Property="Foreground" Value="White" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="StyleWindow" TargetType="{x:Type Window}">
+        <Setter Property="Foreground" Value="Red">
+            
+        </Setter>
+
+       
+
+
+    </Style>
+
+
+
+    <Style TargetType="{x:Type Window}" x:Key="CustomTitleBar">
+        <Setter Property="shell:WindowChrome.WindowChrome">
+            <Setter.Value>
+                <shell:WindowChrome CaptionHeight="0" GlassFrameThickness="-1"  />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="White">
+
+        </Setter>
+
+
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Window">
+                    <DockPanel LastChildFill="True">
+
+                        <Border x:Name="BorderMainWindow"  BorderBrush="Blue" Background="Blue"  BorderThickness="2,0,0,0" Padding="2" Margin="0,0,0,0">
+                            <!--<TextBlock Text="Window content"/>-->
+                            <ContentPresenter />
+
+
+                        </Border>
+
+                    </DockPanel>
+
+
+
+                </ControlTemplate>
+            </Setter.Value>
+
+
+
+        </Setter>
+
+    </Style>
+
+
+
+
+
+
+</ResourceDictionary>

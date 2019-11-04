@@ -1,0 +1,152 @@
+﻿<Window x:Class="TradeSystemASTS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       
+        Title="Торговая система ASTS" Height="800" Width="1100"
+        xmlns:guicomp="clr-namespace:GUIComponents;assembly=GUIComponents" 
+        xmlns:guicompControls="clr-namespace:GUIComponents.Controls;assembly=GUIComponents" 
+        xmlns:viewModel="clr-namespace:TradeSystemASTS.ViewModel"
+        DataContext="{DynamicResource MainWindowViewModel}"
+        >
+
+    <Window.Resources>
+        <viewModel:MainWindowViewModel x:Key="MainWindowViewModel" />
+
+    </Window.Resources>
+
+    <DockPanel>
+    <Menu DockPanel.Dock="Top">
+        <MenuItem Header="Файл">
+            <MenuItem Header="Выход"/>
+
+        </MenuItem>
+        <MenuItem Header="Настройки" >
+
+        </MenuItem>
+
+        <MenuItem Header="Управление">
+
+                <MenuItem Header="Изменить пароль" Click="MenuItem_ChangePassword"/>
+
+            </MenuItem>                        
+    </Menu>
+
+        <Grid Name="GridRoot">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+
+                <RowDefinition Height="4*"   />
+
+            </Grid.RowDefinitions>
+
+
+            <Grid Name="GridMarket" Grid.Row="0" Grid.Column="0" Background="Gainsboro" ShowGridLines="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+
+
+
+
+
+                </Grid.ColumnDefinitions>
+
+                <guicompControls:ControlInstrumentsGrid  x:Name="GridData" Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="24" VerticalAlignment="Stretch" Margin="5,0,0,0"/>
+
+                <guicompControls:ControlSession x:Name="SessionTable" Grid.Row="0" Grid.RowSpan="2" Grid.Column="16" Grid.ColumnSpan="4" Margin="0,7,10,7" 
+                                        SessionState="{Binding Path=SessionState}" SessionString="{Binding Path=SessionString}"/>
+
+
+                <guicompControls:ControlClock Name="ClockBox" Grid.Row="0" Grid.RowSpan="1"  Grid.Column="22" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="5,0,5,0" />
+                <!--
+                <guicomp:ControlFORTSButton  Grid.Row="0" Grid.RowSpan="1" Grid.Column="20" Grid.ColumnSpan="2" Name="FORTSBox" Margin="7,2,7,2"  PathName="IsServerTimeAvailable" 
+                                             IsOK ="{Binding Path=IsFORTSOnline}" ButtonText ="ФОРТС"/>
+
+                <guicomp:ControButtonWithStatus Grid.Row="1" Grid.Column="20" Grid.ColumnSpan="2"  Margin="7,2,7,2" Name="ButtonAnalyzeStatus" 
+                                                ButtonText="АНАЛИЗ"  IsOK ="{Binding Path=IsAnalyzerTFOnline}"/>
+
+                -->
+                <guicompControls:ControButtonWithStatus Grid.Row="2" Grid.Column="20" Grid.ColumnSpan="2"  Margin="7,2,7,2" Name="ButtonDataBaseStatus" 
+                                                ButtonText="БД"  IsOK ="{Binding Path=IsDataBaseConnected}"/>
+
+                
+
+
+                <Button Name="DummyButton" Width="0" Height="0"></Button>
+
+                <guicompControls:ControlAlarm x:Name="Alarm" Grid.Row="4" Grid.Column="0"  Grid.ColumnSpan="14" Height="20" Margin="10,0,0,0" />
+                 
+                
+            </Grid>
+
+
+
+
+
+
+            <Grid Grid.Row="1"  Name="BotGrid" >
+                <Grid.RowDefinitions>
+
+                </Grid.RowDefinitions>
+
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+
+
+
+                </Grid.ColumnDefinitions>
+
+
+                <guicompControls:ControlBotGUI Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" Margin="0,5,0,0" x:Name="Bot1"  />
+                <guicompControls:ControlBotGUI Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Margin="0,5,0,0" x:Name="Bot2"/>
+                <guicompControls:ControlBotGUI Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" Margin="0,5,0,0" x:Name="Bot3"/>
+                <guicompControls:ControlBotGUI Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="1" Margin="0,5,0,0" x:Name="Bot4"/>
+                
+
+
+
+
+            </Grid>
+            <!-- end BotGrid-->
+
+        </Grid>
+
+
+
+    </DockPanel>
+</Window>

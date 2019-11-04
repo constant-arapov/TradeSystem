@@ -1,0 +1,10 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]
+"P2MessagesConf"="d:\\ATFS\\Config\\P2Messages\\"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]
+"P2MessagesIni"="d:\\ATFS\\Ini\\"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]
+"P2MessagesCS"="d:\\ATFS\\P2MessCS\\"

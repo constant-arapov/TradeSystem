@@ -1,0 +1,10 @@
+﻿<Window x:Class="Terminal.Views.ChildWindows.AvailableTickersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Выбор инструмента" Height="300" Width="300"
+        xmlns:controls="clr-namespace:Terminal.Controls.ChildWindows"
+        >
+    <Grid>
+        <controls:ControlAvailTickers x:Name="AvailTicks"></controls:ControlAvailTickers>
+    </Grid>
+</Window>

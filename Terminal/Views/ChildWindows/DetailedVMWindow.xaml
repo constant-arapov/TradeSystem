@@ -1,0 +1,14 @@
+﻿<local:BaseTerminalWindow x:Class="Terminal.Views.ChildWindows.DetailedVMWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Финрез по инструментам" Height="300" Width="300"
+        xmlns:controls ="clr-namespace:Terminal.Controls.ChildWindows"
+         xmlns:local="clr-namespace:Terminal.Views"
+        >
+    <Grid>
+        <controls:ControlVMDetailed x:Name="VMControlDatagrid" x:FieldModifier="public"></controls:ControlVMDetailed>
+
+
+
+    </Grid>
+</local:BaseTerminalWindow>

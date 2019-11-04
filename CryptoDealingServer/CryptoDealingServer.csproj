@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{18F1453C-061D-40D2-A17F-78D0EE7D8669}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CryptoDealingServer</RootNamespace>
+    <AssemblyName>CryptoDealingServer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\CryptoDealingServer.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\CryptoDealingServer.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CCryptoDealingServer.cs" />
+    <Compile Include="Components\CDealboxCrypto.cs" />
+    <Compile Include="Components\CMoneyTracker.cs" />
+    <Compile Include="Components\COrderStatusTracker.cs" />
+    <Compile Include="Components\CPosBoxCrypto.cs" />
+    <Compile Include="Components\CSessionBoxCrypto.cs" />
+    <Compile Include="Components\CStockBoxCrypto.cs" />
+    <Compile Include="Components\CStockConverterCrypto.cs" />
+    <Compile Include="Components\CUserDealsPosBoxCrypto.cs" />
+    <Compile Include="Components\CUserOrderBoxCrypto.cs" />
+    <Compile Include="Helpers\CDBGUserOrderBox.cs" />
+    <Compile Include="Helpers\COrdersHistStor.cs" />
+    <Compile Include="Helpers\CRespSynch.cs" />
+    <Compile Include="Helpers\CTradeHistStor.cs" />
+    <Compile Include="Helpers\CTradeHistStorV2.cs" />
+    <Compile Include="Interfaces\IClientMoneyTracker.cs" />
+    <Compile Include="Interfaces\IClientOrdersHistStor.cs" />
+    <Compile Include="Interfaces\IClientSessionBoxCrypto.cs" />
+    <Compile Include="Interfaces\IClientStockConverterCrypto.cs" />
+    <Compile Include="Interfaces\IClientPositionsBoxCrypto.cs" />
+    <Compile Include="Interfaces\IClientTradeHistStorV2.cs" />
+    <Compile Include="Interfaces\IClientUserDealsPosBoxCrypto.cs" />
+    <Compile Include="Interfaces\IClientUserOrderBoxCrypto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BitfinexCommon\BitfinexCommon.csproj">
+      <Project>{F5F899C7-65E1-413E-8EAD-07B27D08F051}</Project>
+      <Name>BitfinexCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BitfinexRestConnector\BitfinexRestConnector.csproj">
+      <Project>{F50CB77F-584E-4E26-9279-223D9AD69EDE}</Project>
+      <Name>BitfinexRestConnector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BitfinexWebSockConnector\BitfinexWebSockConnector.csproj">
+      <Project>{67101760-3231-406B-A24C-E5D0FD442DD6}</Project>
+      <Name>BitfinexWebSockConnector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ComonentFactory\ComonentFactory.csproj">
+      <Project>{6A44C761-C7BB-4F54-A6F2-38E07FB03993}</Project>
+      <Name>ComonentFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comon\Common.csproj">
+      <Project>{F10D0D6A-2429-447F-B83F-F98BCA2DCEBE}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBCommunicator\DBCommunicator.csproj">
+      <Project>{2E8BDA57-0E66-43F1-B20D-6B37AD7AB71D}</Project>
+      <Name>DBCommunicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TradingLib\TradingLib.csproj">
+      <Project>{4FE8D81E-D820-4C10-98BC-9B947568C715}</Project>
+      <Name>TradingLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

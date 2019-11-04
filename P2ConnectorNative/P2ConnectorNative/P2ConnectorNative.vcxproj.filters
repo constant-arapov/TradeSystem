@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы исходного кода">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Enums">
+      <UniqueIdentifier>{f96b3e08-92b0-48b5-886b-7561a4b9235c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Cgate">
+      <UniqueIdentifier>{4aa59d36-e085-470d-8de9-f6d050a97f9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Components">
+      <UniqueIdentifier>{dd7ebfda-7c4a-4b76-9a02-15e6e46cd612}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Components">
+      <UniqueIdentifier>{f024b602-9512-44c0-a1fb-45cc566622b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Helpers">
+      <UniqueIdentifier>{9af7db38-48ea-4fb7-ba50-12ad8262dd93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Helpers">
+      <UniqueIdentifier>{4a308745-a37d-4ac1-968f-bb4a1b8f7e5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Mocks">
+      <UniqueIdentifier>{f7b7de71-c6a6-4925-8910-ff52587841cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Mocks">
+      <UniqueIdentifier>{e0551b2b-84ca-49c2-b4a7-8b74f224ea9a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="TStockStruct.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadingCreators.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="cgate_callback.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumBuySell.h">
+      <Filter>Заголовочные файлы\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="EnmTransactCodes.h">
+      <Filter>Заголовочные файлы\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="aggr.h">
+      <Filter>Заголовочные файлы\Cgate</Filter>
+    </ClInclude>
+    <ClInclude Include="cgate.h">
+      <Filter>Заголовочные файлы\Cgate</Filter>
+    </ClInclude>
+    <ClInclude Include="CP2ConnectorNative.h">
+      <Filter>Заголовочные файлы\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CMapperGlobals.h">
+      <Filter>Заголовочные файлы\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CMapperStock.h">
+      <Filter>Заголовочные файлы\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CStockProcessor.h">
+      <Filter>Заголовочные файлы\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CStockRouter.h">
+      <Filter>Заголовочные файлы\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Clogger.h">
+      <Filter>Заголовочные файлы\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="CStopWatch.h">
+      <Filter>Заголовочные файлы\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="CNamedPipeClient.h">
+      <Filter>Заголовочные файлы\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="CLocker.h">
+      <Filter>Заголовочные файлы\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="CAlarmer.h">
+      <Filter>Заголовочные файлы\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="MockMapperGlobals.h">
+      <Filter>Заголовочные файлы\Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="MockAlarmer.h">
+      <Filter>Заголовочные файлы\Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="CSynchro.h">
+      <Filter>Заголовочные файлы\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="MockSynchro.h">
+      <Filter>Заголовочные файлы\Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="CSleeper.h">
+      <Filter>Заголовочные файлы\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="MockP2ConnectorNative.h">
+      <Filter>Заголовочные файлы\Mocks</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="P2ConnectorNative.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="ustils.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadingCreators.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="cgate_callback.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="CMapperGlobals.cpp">
+      <Filter>Файлы исходного кода\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="CMapperStock.cpp">
+      <Filter>Файлы исходного кода\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="CP2ConnectorNative.cpp">
+      <Filter>Файлы исходного кода\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="CStockProcessor.cpp">
+      <Filter>Файлы исходного кода\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="CStockRouter.cpp">
+      <Filter>Файлы исходного кода\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="CLogger.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="CStopWatch.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="CNamedPipeClient.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="CLocker.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="CAlarmer.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="MockMapperGlobals.cpp">
+      <Filter>Файлы исходного кода\Mocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="MockAlarmer.cpp">
+      <Filter>Файлы исходного кода\Mocks</Filter>
+    </ClCompile>
+    <ClCompile Include="CSynchro.cpp">
+      <Filter>Файлы исходного кода\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="MockSynchro.cpp">
+      <Filter>Файлы исходного кода\Mocks</Filter>
+    </ClCompile>
+    <ClCompile Include="CSleeper.cpp">
+      <Filter>Файлы исходного кода\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="MockP2ConnectorNative.cpp">
+      <Filter>Файлы исходного кода\Components</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

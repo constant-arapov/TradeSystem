@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Terminal.Controls.Market.ChildElements.ControlWorkAmount"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:l="clr-namespace:Terminal.Controls.Market.ChildElements"
+             mc:Ignorable="d" Height="80" Width="35"      
+             PreviewMouseDown="UserControl_PreviewMouseDown"
+             MouseDown="UserControl_MouseDown"
+             Panel.ZIndex="50000"
+            Background="Red"
+          
+            
+             >
+    <Grid x:FieldModifier="public" x:Name="WorkAmountGridGrid" HorizontalAlignment="Stretch" Panel.ZIndex="5000"  >
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="5" ></Border>
+         <!--
+        <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="1" Background="White" ></Border>
+        -->
+
+        <l:ControlAmountTextBlock x:FieldModifier="public" x:Name="AmountTextBlock1" Grid.Row="0" Grid.RowSpan="1"  HorizontalAlignment="Center" Width="35"    Number="0" ></l:ControlAmountTextBlock>
+        <l:ControlAmountTextBlock x:FieldModifier="public" x:Name="AmountTextBlock2" Grid.Row="1" Grid.RowSpan="1"  HorizontalAlignment="Center" Width="35" Number="1"></l:ControlAmountTextBlock>
+        <l:ControlAmountTextBlock x:FieldModifier="public" x:Name="AmountTextBlock3" Grid.Row="2" Grid.RowSpan="1"  HorizontalAlignment="Center" Width="35" Number="2"></l:ControlAmountTextBlock>
+        <l:ControlAmountTextBlock x:FieldModifier="public" x:Name="AmountTextBlock4" Grid.Row="3" Grid.RowSpan="1"  HorizontalAlignment="Center" Width="35" Number="3"></l:ControlAmountTextBlock>
+        <l:ControlAmountTextBlock x:FieldModifier="public" x:Name="AmountTextBlock5" Grid.Row="4" Grid.RowSpan="1"  HorizontalAlignment="Center" Width="35" Number="4"></l:ControlAmountTextBlock>
+        
+       
+       <!--
+        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" MouseDown="TextBlock_MouseDown" PreviewMouseDown="UserControl_PreviewMouseDown">01</TextBlock>-->
+       <!-- <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" >02</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" >03</TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" >04</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" >05</TextBlock>
+        -->
+        
+            
+    </Grid>
+</UserControl>

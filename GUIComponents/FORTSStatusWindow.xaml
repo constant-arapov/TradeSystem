@@ -1,0 +1,13 @@
+﻿<Window x:Class="GUIComponents.Controls.FORTSStatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Connection diagnostics" Height="300" Width="280"
+        xmlns:guicompControls="clr-namespace:GUIComponents.Controls"
+        WindowStyle="ToolWindow"
+        >
+        
+    <Grid>
+        <guicompControls:ControlFORTSStatusWindow x:Name="ControlFORTSStatus" x:FieldModifier="public"/>        
+        
+    </Grid>
+</Window>

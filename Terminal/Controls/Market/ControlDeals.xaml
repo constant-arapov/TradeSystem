@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Terminal.Controls.Market.ControlDeals"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"             
+             Background="#00FFFFFF" Focusable="False"
+             SizeChanged="ControlDeals_SizeChanged"
+             MouseEnter="OnMouseEnter"
+             MouseLeave="OnMouseLeave"
+             MouseMove="OnMouseMove"
+             xmlns:guicomp="clr-namespace:Terminal.Controls.Market.ChildElements">
+    <Grid >
+        <Image x:Name="ImageDeals" Image.Stretch="None" Panel.ZIndex="3" />
+        <Canvas x:Name="CanvasControlDeals" Panel.ZIndex="3"  />       
+        <Image x:Name="ImageLevels" Image.Stretch="None" Panel.ZIndex="2" />
+        <guicomp:ControlWorkAmount x:Name="WorkAmountGrid" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="0,0,0,1" ></guicomp:ControlWorkAmount>
+    </Grid>
+</UserControl>

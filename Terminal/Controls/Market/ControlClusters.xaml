@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="Terminal.Controls.Market.ControlClusters"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"              
+             UIElement.Focusable="False"
+            >
+    <Canvas x:Name="CanvasControlClusters" SizeChanged="CanvasControlClustersSizeChanged"  Panel.ZIndex="1" Panel.Background="#00FFFFFF" >
+        <ScrollViewer x:Name="ScrollViewerClusters" Canvas.Right="0"  Canvas.Top="0"  Width="100" Height="200"  VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Hidden" PreviewMouseWheel="ScrollViewerClusters_PreviewMouseWheel">
+            <Grid x:Name="GridCanvasControlClusters" Panel.Background="#00FFFFFF" Canvas.Right="0"  Canvas.Top="0" Height="200" Width="400" ZIndex="1" MinWidth="50"  MaxWidth="400"
+               MouseDown="GridCanvasControlClusters_MouseDown" MouseUp="GridCanvasControlClusters_MouseUp" 
+              MouseLeave="GridCanvasControlClusters_MouseLeave" MouseMove="GridCanvasControlClusters_MouseMove"
+                  HorizontalAlignment="Right">        
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition ColumnDefinition.Width="Auto" />
+                <ColumnDefinition ColumnDefinition.Width="*" />
+                <ColumnDefinition ColumnDefinition.Width="Auto" />
+                <ColumnDefinition ColumnDefinition.Width="*" />
+                <ColumnDefinition ColumnDefinition.Width="Auto" />
+                <ColumnDefinition ColumnDefinition.Width="*" />
+                <ColumnDefinition ColumnDefinition.Width="Auto" />
+                <ColumnDefinition ColumnDefinition.Width="*" />
+                <ColumnDefinition ColumnDefinition.Width="Auto" />
+                <ColumnDefinition ColumnDefinition.Width="*" />
+                <ColumnDefinition ColumnDefinition.Width="Auto" />
+                <ColumnDefinition ColumnDefinition.Width="*" />
+                <ColumnDefinition ColumnDefinition.Width="Auto" />
+                <ColumnDefinition ColumnDefinition.Width="*" />
+                <ColumnDefinition ColumnDefinition.Width="Auto" />
+                <ColumnDefinition ColumnDefinition.Width="*" />
+                <ColumnDefinition ColumnDefinition.Width="Auto" />
+                <ColumnDefinition ColumnDefinition.Width="*" />
+                <ColumnDefinition ColumnDefinition.Width="Auto" />
+                <ColumnDefinition ColumnDefinition.Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition RowDefinition.Height="*" />
+                <RowDefinition RowDefinition.Height="13" />
+            </Grid.RowDefinitions>
+            <Image x:Name="Image_0" Image.Stretch="None" Grid.Column="19"  />
+            <Image x:Name="Image_1" Image.Stretch="None" Grid.Column="17" />
+            <Image x:Name="Image_2" Image.Stretch="None" Grid.Column="15" />
+            <Image x:Name="Image_3" Image.Stretch="None" Grid.Column="13" />
+            <Image x:Name="Image_4" Image.Stretch="None" Grid.Column="11" />
+            <Image x:Name="Image_5" Image.Stretch="None" Grid.Column="9" />
+            <Image x:Name="Image_6" Image.Stretch="None" Grid.Column="7" />
+            <Image x:Name="Image_7" Image.Stretch="None" Grid.Column="5" />
+            <Image x:Name="Image_8" Image.Stretch="None" Grid.Column="3" />
+            <Image x:Name="Image_9" Image.Stretch="None" Grid.Column="1" />
+            <Line Shape.Stroke="#FFD3D3D3" Shape.StrokeThickness="1" Shape.Stretch="Fill" Grid.Column="18" Line.Y1="0" Line.Y2="1"  />
+            <Line Shape.Stroke="#FFD3D3D3" Shape.StrokeThickness="1" Shape.Stretch="Fill" Grid.Column="16" Line.Y1="0" Line.Y2="1" />
+            <Line Shape.Stroke="#FFD3D3D3" Shape.StrokeThickness="1" Shape.Stretch="Fill" Grid.Column="14" Line.Y1="0" Line.Y2="1" />
+            <Line Shape.Stroke="#FFD3D3D3" Shape.StrokeThickness="1" Shape.Stretch="Fill" Grid.Column="12" Line.Y1="0" Line.Y2="1" />
+            <Line Shape.Stroke="#FFD3D3D3" Shape.StrokeThickness="1" Shape.Stretch="Fill" Grid.Column="10" Line.Y1="0" Line.Y2="1" />
+            <Line Shape.Stroke="#FFD3D3D3" Shape.StrokeThickness="1" Shape.Stretch="Fill" Grid.Column="8" Line.Y1="0" Line.Y2="1" />
+            <Line Shape.Stroke="#FFD3D3D3" Shape.StrokeThickness="1" Shape.Stretch="Fill" Grid.Column="6" Line.Y1="0" Line.Y2="1" />
+            <Line Shape.Stroke="#FFD3D3D3" Shape.StrokeThickness="1" Shape.Stretch="Fill" Grid.Column="4" Line.Y1="0" Line.Y2="1" />
+            <Line Shape.Stroke="#FFD3D3D3" Shape.StrokeThickness="1" Shape.Stretch="Fill" Grid.Column="2" Line.Y1="0" Line.Y2="1" />
+            <Line Shape.Stroke="#FFD3D3D3" Shape.StrokeThickness="1" Shape.Stretch="Fill" Grid.Column="0" Line.Y1="0" Line.Y2="1" />
+                                 
+        </Grid>
+    </ScrollViewer>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,26 @@
+﻿<Window x:Class="InstallTerminal.WindowKillTerminal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="" Height="300" Width="300"
+        WindowStyle="None">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" TextWrapping="Wrap" VerticalAlignment="TOP" Margin="10,10,10,0" FontSize="14">
+            Обнаружен запущенный терминал.<LineBreak/> <LineBreak/> 
+            Нажмите "ЗАКРЫТЬ" чтобы  завершить работу терминала и
+            продолжить установку. <LineBreak/> <LineBreak/>
+            Нажите "ОТМЕНА", после чего самостоятельно закройте терминал.
+        </TextBlock>
+        
+        
+  
+       <Button Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="80" Height="30"  Margin="0,0,90,20" Name="ButtonCancell" Click="ButtonCancell_Click">Отмена</Button>
+        <Button Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="80" Height="30" Margin="90,0,0,20" Name="ButtonTerminate" Click="ButtonTerminate_Click">Закрыть</Button>
+
+
+    </Grid>
+</Window>

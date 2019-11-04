@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="ClientGUI.ControlStockRecord"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="500">
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+      <!--  <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1"></Label>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1"></Label>
+        -->
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition>                   
+                </ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Name="Volume"  Margin="0,0,0,0" Padding="0,0,0,0">20</Label>
+            <Label Grid.Column="1" Name="Price" Padding="0,0,0,0">85370</Label>
+
+        </Grid>
+        <!--<Label Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="1">20</Label>-->
+    </Grid>
+</UserControl>

@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="GUIComponents.Controls.ControlClock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUIComponents.Controls"
+             mc:Ignorable="d" 
+              d:DesignHeight="25" d:DesignWidth="50"
+             x:FieldModifier="public"
+             x:Name="ControlClockComponent">
+    <Grid>
+        <local:ControlTextBlock x:Name="TextWin" x:FieldModifier="public" Width="Auto" TextFormat="HH:MM:SS" TextFontSize="11">
+            
+        </local:ControlTextBlock>
+    </Grid>
+</UserControl>

@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FE8D81E-D820-4C10-98BC-9B947568C715}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TradingLib</RootNamespace>
+    <AssemblyName>TradingLib</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\TradingLib.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\TradingLib.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="cgate_net64, Version=5.1.1.17103, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\release\cgate_net64.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\CBaseCommunicator.cs" />
+    <Compile Include="Abstract\CBaseDealingServer.cs" />
+    <Compile Include="Abstract\CBaseDealsBox.cs" />
+    <Compile Include="Abstract\CBasePosBox.cs" />
+    <Compile Include="Abstract\CBaseSessionBox.cs" />
+    <Compile Include="Abstract\CBaseStockBox.cs" />
+    <Compile Include="Abstract\CBaseUserDealsPosBox.cs" />
+    <Compile Include="Abstract\CBaseStockConverter.cs" />
+    <Compile Include="Abstract\Helpers\DBGPosLogData.cs" />
+    <Compile Include="BotEvents\BotEventDeal.cs" />
+    <Compile Include="BotEvents\BotEventOrder.cs" />
+    <Compile Include="BotEvents\BotEventStock.cs" />
+    <Compile Include="BotEvents\BotEventTF.cs" />
+    <Compile Include="BotEvents\CBotEventStructure.cs" />
+    <Compile Include="BotEvents\EnmBotEventCode.cs" />
+    <Compile Include="Bots\CBotBase.cs" />
+    <Compile Include="Bots\CBotHelper.cs" />
+    <Compile Include="Bots\CBotHighLowContra.cs" />
+    <Compile Include="Bots\CBotMarketData.cs" />
+    <Compile Include="Bots\CBotRiskManager.cs" />
+    <Compile Include="Bots\CBotSingleInstrument.cs" />
+    <Compile Include="Bots\CBotState.cs" />
+    <Compile Include="CLocalAccount.cs" />
+    <Compile Include="Common\VMCalc\CCryptoVMCalc.cs" />
+    <Compile Include="CPasswordSaver.cs" />
+    <Compile Include="Data\CCmdStockChange.cs" />
+    <Compile Include="Data\CCryptoInstrData.cs" />
+    <Compile Include="Data\CDBOpenedClosedTotal.cs" />
+    <Compile Include="Data\DB\CDBTurnOver.cs" />
+    <Compile Include="Data\CUserOrder.cs" />
+    <Compile Include="Data\CUserOrderLog.cs" />
+    <Compile Include="Data\DB\CDBBfxTrades.cs" />
+    <Compile Include="Data\DB\CDBBindDealBotPos.cs" />
+    <Compile Include="Data\DB\CDBInsertBfxTrades.cs" />
+    <Compile Include="Data\DB\CDBMoneyTracking.cs" />
+    <Compile Include="Data\DB\CDBTurnoverFee.cs" />
+    <Compile Include="Data\DB\CDBUpdateFee.cs" />
+    <Compile Include="Common\CodeSessionState.cs" />
+    <Compile Include="Data\DB\CDBUpdateFeeUserDealsLog.cs" />
+    <Compile Include="Data\DB\CDBUpdateStepPrice.cs" />
+    <Compile Include="Data\DB\CDBUpdateWallet.cs" />
+    <Compile Include="Data\DB\CDBBfxOrders.cs" />
+    <Compile Include="Data\DB\CDBUpdPosInstr.cs" />
+    <Compile Include="Data\DB\CDBUpdVMOpenedClosedTot.cs" />
+    <Compile Include="Enums\EnmStockChngCodes.cs" />
+    <Compile Include="Interfaces\Clients\IClientComponentFactory.cs" />
+    <Compile Include="Interfaces\Clients\IClientDBCommunicator.cs" />
+    <Compile Include="Interfaces\Clients\IClientPosBox.cs" />
+    <Compile Include="Interfaces\Clients\IClientReportDispatcher.cs" />
+    <Compile Include="Interfaces\Clients\IClientSharedStock.cs" />
+    <Compile Include="Interfaces\Clients\IClientSnapshoterStockSmart.cs" />
+    <Compile Include="Interfaces\Interaction\IDataFormatForCntrlIntr.cs" />
+    <Compile Include="Interfaces\Keys\IKey_TraderName.cs" />
+    <Compile Include="ProtoTradingStructs\CDisableBot.cs" />
+    <Compile Include="ProtoTradingStructs\CEnableBot.cs" />
+    <Compile Include="ProtoTradingStructs\CClientInfo.cs" />
+    <Compile Include="ProtoTradingStructs\CStockConf.cs" />
+    <Compile Include="ProtoTradingStructs\CUpdateInstrumentParams.cs" />
+    <Compile Include="ProtoTradingStructs\CUserPosLogUpdLate.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CBaseTrdMgr_StockExch_BotId.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CBaseTrdMgr_StockExch_Bot_InstrId.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CBaseTrdMgr_StockExch_InstrId.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CBase_StockExchId.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CBotPosTrdMgr.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CBotStatus.cs" />
+    <Compile Include="Bots\CBotTester.cs" />
+    <Compile Include="Bots\CBotTesterCrossFirst.cs" />
+    <Compile Include="Bots\CBotTesterCrossSecond.cs" />
+    <Compile Include="Bots\CBotTesterLimits.cs" />
+    <Compile Include="Bots\CBotTesterPos.cs" />
+    <Compile Include="Bots\CBotTrader.cs" />
+    <Compile Include="Bots\COrderThrowData.cs" />
+    <Compile Include="Bots\CSubBot.cs" />
+    <Compile Include="CBotFactory.cs" />
+    <Compile Include="CClearingProcessor.cs" />
+    <Compile Include="Common\CodeDisableTradeByTime.cs" />
+    <Compile Include="Common\CodesStockExch.cs" />
+    <Compile Include="Common\VMCalc\CBaseVMCalc.cs" />
+    <Compile Include="Common\VMCalc\CFortsVMCalc.cs" />
+    <Compile Include="Common\VMCalc\CMOEXVmCalc.cs" />
+    <Compile Include="Data\CDisableTradeLoaded.cs" />
+    <Compile Include="Data\CListRowStock.cs" />
+    <Compile Include="Data\FUTTRADE.cs" />
+    <Compile Include="Data\UserConReq.cs" />
+    <Compile Include="Enums\EnmCancelOrderDir.cs" />
+    <Compile Include="Enums\EnmVMCalc.cs" />
+    <Compile Include="Interfaces\Clients\IClientBotRiskManager.cs" />
+    <Compile Include="Interfaces\Clients\IClientControlBotGUI.cs" />
+    <Compile Include="Interfaces\Clients\IClientDealsStruct.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Bots\EnmTraderState.cs" />
+    <Compile Include="CBotPos.cs" />
+    <Compile Include="CDictTFArray.cs" />
+    <Compile Include="Data\CDealsStruct.cs" />
+    <Compile Include="Data\CRawStock.cs" />
+    <Compile Include="Enums\EnmAccountOperations.cs" />
+    <Compile Include="GUI\Candles\CGUICandleProcessor.cs" />
+    <Compile Include="GUI\CGUIBot.cs" />
+    <Compile Include="GUI\CGUIBox.cs" />
+    <Compile Include="GUI\Candles\CGUICandle.cs" />
+    <Compile Include="GUI\Candles\CGUICandleBox.cs" />
+    <Compile Include="GUI\Candles\CGUICandleCollection.cs" />
+    <Compile Include="GUI\Candles\CGUICandleObject.cs" />
+    <Compile Include="CSharedStocks.cs" />
+    <Compile Include="CTimeFrameAnalyzer.cs" />
+    <Compile Include="CTimeFrameArray.cs" />
+    <Compile Include="Data\CInstrument.cs" />
+    <Compile Include="Bots\CMonitorOrdersToral.cs" />
+    <Compile Include="Bots\CSettingsBot.cs" />
+    <Compile Include="CTradeConv.cs" />
+    <Compile Include="CTradeTimer.cs" />
+    <Compile Include="Data\CFutLims.cs" />
+    <Compile Include="Data\CRawDeal.cs" />
+    <Compile Include="Data\CRawOrdersLogStruct.cs" />
+    <Compile Include="Data\CRawPosition.cs" />
+    <Compile Include="Data\CRawUserDeal.cs" />
+    <Compile Include="Data\CTimeFrameInfo.cs" />
+    <Compile Include="Data\DB\CDBAccountMoney.cs" />
+    <Compile Include="Data\DB\CDBAccountTrade.cs" />
+    <Compile Include="Data\DB\CDBClearing.cs" />
+    <Compile Include="Data\DB\CDBClearingVM.cs" />
+    <Compile Include="Data\DB\CDBExceptHoliday.cs" />
+    <Compile Include="Data\DB\CDBInstrument.cs" />
+    <Compile Include="Data\DB\CDBLastClosed.cs" />
+    <Compile Include="Data\DB\CDBOperationsLog.cs" />
+    <Compile Include="Data\DB\CDBPayout.cs" />
+    <Compile Include="Data\DB\CDBSessionDefaultSchedule.cs" />
+    <Compile Include="Data\DB\CDBSessions.cs" />
+    <Compile Include="Data\DB\CDBUserDeal.cs" />
+    <Compile Include="Data\DB\CDBUserPosLog.cs" />
+    <Compile Include="Data\DB\CLatestTradeData.cs" />
+    <Compile Include="Data\DB\CListInstruments.cs" />
+    <Compile Include="Data\DB\Interfaces\IAccountMoney.cs" />
+    <Compile Include="Data\DB\Interfaces\IObjectWithId.cs" />
+    <Compile Include="Data\Plaza2Messages\AGGR.cs" />
+    <Compile Include="Data\Plaza2Messages\AstsCCAggr.cs" />
+    <Compile Include="Data\Plaza2Messages\AstsCCInfo.cs" />
+    <Compile Include="Data\Plaza2Messages\AstsCCTrade.cs" />
+    <Compile Include="Data\Plaza2Messages\AstsSpotAggr.cs" />
+    <Compile Include="Data\Plaza2Messages\AstsSpotInfo.cs" />
+    <Compile Include="Data\Plaza2Messages\AstsSpotTrade.cs" />
+    <Compile Include="Data\Plaza2Messages\DEALS.cs" />
+    <Compile Include="Data\Plaza2Messages\FORTS_VM_REPL.cs" />
+    <Compile Include="Data\Plaza2Messages\FUTINFO.cs" />
+    <Compile Include="Data\Plaza2Messages\FUTTRADE.cs" />
+    <Compile Include="Data\Plaza2Messages\INFO.cs" />
+    <Compile Include="Data\Plaza2Messages\MESSAGE.cs" />
+    <Compile Include="Data\Plaza2Messages\ORDLOG.cs" />
+    <Compile Include="Data\Plaza2Messages\PART.cs" />
+    <Compile Include="Data\Plaza2Messages\POS.cs" />
+    <Compile Include="Data\Plaza2Messages\USER_DEAL.cs" />
+    <Compile Include="Enums\Direction.cs" />
+    <Compile Include="CTradersAccounts.cs" />
+    <Compile Include="CTraderStruct.cs" />
+    <Compile Include="Enums\EnmOrderAction.cs" />
+    <Compile Include="Enums\enmTF.cs" />
+    <Compile Include="Enums\EnumStopOrders.cs" />
+    <Compile Include="Enums\OrderDirection.cs" />
+    <Compile Include="GUI\CGUIUserDealsCollection.cs" />
+    <Compile Include="GUI\CGUIUserDealViewModel.cs" />
+    <Compile Include="GUI\GUIStructs.cs" />
+    <Compile Include="Interfaces\Clients\IClearingProcessorClient.cs" />
+    <Compile Include="Interfaces\Clients\IClientASTSConnection.cs" />
+    <Compile Include="Interfaces\Clients\IClientInstrumentGrid.cs" />
+    <Compile Include="Interfaces\Clients\IClientSnapshoter.cs" />
+    <Compile Include="Interfaces\Clients\IClientDealBox.cs" />
+    <Compile Include="Interfaces\Clients\IClientSession.cs" />
+    <Compile Include="Interfaces\Clients\IClientSessionBox.cs" />
+    <Compile Include="Interfaces\Clients\IClientStockBox.cs" />
+    <Compile Include="Interfaces\Clients\IClientSubBot.cs" />
+    <Compile Include="Interfaces\Clients\IClientTradeManagerServer.cs" />
+    <Compile Include="Interfaces\Clients\IClientTradersDispatcher.cs" />
+    <Compile Include="Interfaces\Clients\IClientWindowManualTrading.cs" />
+    <Compile Include="Interfaces\Components\IReportDispatcher.cs" />
+    <Compile Include="Interfaces\Components\IStockConverter.cs" />
+    <Compile Include="Interfaces\Components\IStockStruct.cs" />
+    <Compile Include="Interfaces\IBotPos.cs" />
+    <Compile Include="Interfaces\IBotTraderOperations.cs" />
+    <Compile Include="Interfaces\Clients\IClientGUICandleBox.cs" />
+    <Compile Include="Interfaces\Clients\IClientGUIBox.cs" />
+    <Compile Include="Interfaces\Clients\IClientStockConverter.cs" />
+    <Compile Include="Interfaces\Clients\IClientStockStruct.cs" />
+    <Compile Include="Interfaces\Clients\IClientTimeFrameAnalyzer.cs" />
+    <Compile Include="Interfaces\Clients\IClientUserDealsCollection.cs" />
+    <Compile Include="Interfaces\Components\IDBCommunicator.cs" />
+    <Compile Include="Interfaces\Components\IDealingServer.cs" />
+    <Compile Include="Interfaces\Components\IDealBox.cs" />
+    <Compile Include="Interfaces\Components\IGUIBot.cs" />
+    <Compile Include="Interfaces\Clients\IClientGUIBot.cs" />
+    <Compile Include="Interfaces\Clients\IClientInstruments.cs" />
+    <Compile Include="Interfaces\Components\IListInstruments.cs" />
+    <Compile Include="Interfaces\IBotOerations.cs" />
+    <Compile Include="Interfaces\Interaction\IDBCommunicatorForClearingProcessor.cs" />
+    <Compile Include="Interfaces\Components\IPositionBox.cs" />
+    <Compile Include="Interfaces\Components\ISession.cs" />
+    <Compile Include="Interfaces\Components\ISessionBox.cs" />
+    <Compile Include="Interfaces\Components\IStockBox.cs" />
+    <Compile Include="Interfaces\Components\IStockConnector.cs" />
+    <Compile Include="Interfaces\Components\ISnapshoterStock.cs" />
+    <Compile Include="Interfaces\Interaction\IDBCommunicatorForReportDispatcher.cs" />
+    <Compile Include="Interfaces\Interaction\IDealBoxForP2Connector.cs" />
+    <Compile Include="Interfaces\Interaction\IMainWindowForInstrumentRec.cs" />
+    <Compile Include="Interfaces\Interaction\ISessionBoxForP2Connector.cs" />
+    <Compile Include="Interfaces\Interaction\IStockBoxForP2Connector.cs" />
+    <Compile Include="Interfaces\Interaction\IUserdealsPosBoxForP2Connector.cs" />
+    <Compile Include="Interfaces\Interaction\IUserOrdersBoxForP2Connector.cs" />
+    <Compile Include="Interfaces\ITradeOperations.cs" />
+    <Compile Include="Interfaces\Components\IUserDealsPosBox.cs" />
+    <Compile Include="Interfaces\Clients\IClientUserDealsPosBox.cs" />
+    <Compile Include="Interfaces\Components\IUserOrderBox.cs" />
+    <Compile Include="ProtoTradingStructs\CAccountMoney.cs" />
+    <Compile Include="ProtoTradingStructs\CAccountTrade.cs" />
+    <Compile Include="ProtoTradingStructs\CAddOrder.cs" />
+    <Compile Include="ProtoTradingStructs\CAuthRequest.cs" />
+    <Compile Include="ProtoTradingStructs\CAuthResponse.cs" />
+    <Compile Include="ProtoTradingStructs\CAvailableTickers.cs" />
+    <Compile Include="ProtoTradingStructs\CCloseAllPositionsByIsin.cs" />
+    <Compile Include="ProtoTradingStructs\CCancellAllOrders.cs" />
+    <Compile Include="ProtoTradingStructs\CCancellOrderById.cs" />
+    <Compile Include="ProtoTradingStructs\CCancellOrderByIsin.cs" />
+    <Compile Include="ProtoTradingStructs\CCloseAllPositions.cs" />
+    <Compile Include="ProtoTradingStructs\CDataRestOrder.cs" />
+    <Compile Include="ProtoTradingStructs\CInvertUserPos.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CCloseBotPosTrdMgr.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CListBotStatus.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CListBotPosTrdMgr.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CListClietInfo.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CListPositionInstrTotal.cs" />
+    <Compile Include="ProtoTradingStructs\CSendOrderThrow.cs" />
+    <Compile Include="ProtoTradingStructs\CStopLossTakeProfit.cs" />
+    <Compile Include="ProtoTradingStructs\CUserMoney.cs" />
+    <Compile Include="ProtoTradingStructs\COrder.cs" />
+    <Compile Include="ProtoTradingStructs\CSubscribeTicker.cs" />
+    <Compile Include="ProtoTradingStructs\CUserDeal.cs" />
+    <Compile Include="ProtoTradingStructs\CUserDealsLog.cs" />
+    <Compile Include="ProtoTradingStructs\CUserOrdersUpdate.cs" />
+    <Compile Include="ProtoTradingStructs\CAggrDealStruct.cs" />
+    <Compile Include="ProtoTradingStructs\CDealClass.cs" />
+    <Compile Include="CDealsAgregator.cs" />
+    <Compile Include="ProtoTradingStructs\CDealsList.cs" />
+    <Compile Include="ProtoTradingStructs\CUserPos.cs" />
+    <Compile Include="ProtoTradingStructs\CUserPosLog.cs" />
+    <Compile Include="ProtoTradingStructs\CUserPosLogUpdate.cs" />
+    <Compile Include="ProtoTradingStructs\CUserPosMonitorUpdate.cs" />
+    <Compile Include="Enums\EnmOrderDir.cs" />
+    <Compile Include="ProtoTradingStructs\CTimeSynchroClass.cs" />
+    <Compile Include="Enums\EnmDealDir.cs" />
+    <Compile Include="Enums\enmTradingEvent.cs" />
+    <Compile Include="ProtoTradingStructs\CStock.cs" />
+    <Compile Include="ProtoTradingStructs\CStockClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtoTradingStructs\CUserUpdateVM.cs" />
+    <Compile Include="ProtoTradingStructs\CUserVmInstrumentRecord.cs" />
+    <Compile Include="ProtoTradingStructs\CUserVMStockRecord.cs" />
+    <Compile Include="Enums\EnmOrderTypes.cs" />
+    <Compile Include="ProtoTradingStructs\IDataLogUpdateCommand.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CListTraderInfoSummary.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CPositionInstrTotal.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CSendReconnect.cs" />
+    <Compile Include="ProtoTradingStructs\TradeManager\CTraderInfoSummary.cs" />
+    <Compile Include="Snapshoters\CBaseSnapshoter.cs" />
+    <Compile Include="Snapshoters\CSnapshoterDeals.cs" />
+    <Compile Include="Snapshoters\CSnapshoterStock.cs" />
+    <Compile Include="Snapshoters\CSnapshoterStockSmart.cs" />
+    <Compile Include="TradeManagerServer\CTradeManagerLink.cs" />
+    <Compile Include="TradeManagerServer\CTradeManagerServer.cs" />
+    <Compile Include="TradersDispatcher\CDBGTrdDispatcher.cs" />
+    <Compile Include="TradersDispatcher\CParallelUpdater.cs" />
+    <Compile Include="TradersDispatcher\CTrader.cs" />
+    <Compile Include="TradersDispatcher\CTradingData.cs" />
+    <Compile Include="TradersDispatcher\CTradersDispatcher.cs" />
+    <Compile Include="TradersDispatcher\Helpers\DBGTrdDispStockUpd.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Comon\Common.csproj">
+      <Project>{F10D0D6A-2429-447F-B83F-F98BCA2DCEBE}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Messager\Messenger.csproj">
+      <Project>{89D0AE33-C836-4525-AF24-A10ADD07727D}</Project>
+      <Name>Messenger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TCPLib\TCPLib.csproj">
+      <Project>{74B77A2D-9D7A-4FD6-A57D-AB877BDB9AA5}</Project>
+      <Name>TCPLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

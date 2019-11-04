@@ -1,0 +1,1 @@
+d:\Dropbox\proj\arch_sources\arch_sources\bin\Debug\arch_sources.exe "c:\Program Files\7-Zip\7z.exe" "Plaza2Connector" d:\Dropbox\proj\profinvest\plaza2\ D:\cs_progs\plaza2\

@@ -1,0 +1,321 @@
+﻿<Window x:Class="Terminal.Views.ChildWindows.HotKeyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Terminal.Views.ChildWindows"
+        mc:Ignorable="d"
+        Title="Горячие клавиши" Height="768" Width="620">
+    <Window.Resources>
+
+        <Style x:Name="StyleRowStockPanel" TargetType="StackPanel">
+            <Setter Property="Margin" Value="0,10,0,0"/>
+        </Style>
+        
+        <Style x:Key="StyleDescription" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Width" Value="440"/>
+            <Setter Property="Background" Value="PaleGoldenrod"/>
+            <Setter Property="Padding" Value="7,3,5,5"/>
+        </Style>
+
+        <Style x:Key="StyleButton" TargetType="Button">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style x:Key="StyleTooltip" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Width" Value="500"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        
+        
+
+
+
+
+    </Window.Resources>
+
+
+    <!-- ====================================================================  -->
+
+    <StackPanel Margin="20,0,0,0">
+        <StackPanel Orientation="Horizontal" >
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                    Закрыть позицию и снять все  лимитные заявки. Если курсор мыши в
+                стакане, то по текущему инструменту. 
+                Если за пределами стакана, то по всем инструментам.
+                </TextBlock>
+            </StackPanel.ToolTip>
+            
+                       
+            <Button   Content="Ctrl" 
+                    VerticalAlignment="Top" Style="{StaticResource StyleButton}" />
+            <TextBlock Style="{StaticResource StyleDescription}" 
+                       Text="Закрыть позицию и снять все  лимитные заявки."/>
+
+        </StackPanel>
+
+  <!-- ====================================================================  -->
+        
+        <StackPanel Orientation="Horizontal" ToolTipService.ShowDuration="300000">
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                   "Cнять все лимитные заявки. Если курсор мыши в
+                стакане, то по текущему инструменту. 
+                Если за пределами стакана, то по всем инструментам.
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+
+            <Button   Content="Space" 
+                    VerticalAlignment="Top" Style="{StaticResource StyleButton}" />
+            <TextBlock Style="{StaticResource StyleDescription}" 
+                       Text="Cнять все лимитные заявки."/>
+
+        </StackPanel>
+
+    <!-- ====================================================================  -->
+
+        <StackPanel Orientation="Horizontal" ToolTipService.ShowDuration="300000">
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                  При нажатии левой кнопкой мыши на цене выставляется лимитка объемом, 
+                    равным открытой позиции.
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+
+            <Button   Content="Alt" 
+                    VerticalAlignment="Top" Style="{StaticResource StyleButton}" />
+            <TextBlock Style="{StaticResource StyleDescription}" 
+                       Text="Выставить лимитку, равную открытой позиции."/>
+
+        </StackPanel>
+
+        <!-- ====================================================================  -->
+
+                              
+        <StackPanel Orientation="Horizontal" ToolTipService.ShowDuration="300000">
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                   Центрировать стакан. Лучший бид и лучший аск размещаются по
+                    центры стакана.
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+
+            <Button   Content="Shift" 
+                    VerticalAlignment="Top" Style="{StaticResource StyleButton}" />
+            <TextBlock Style="{StaticResource StyleDescription}" 
+                       Text="Центрировать стакан."/>
+
+        </StackPanel>
+       
+
+
+        <StackPanel Orientation="Horizontal" ToolTipService.ShowDuration="300000">
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                   При наведении мыши на стакан и нажатии кнопки увеличивается точность
+                    (количество знаков после запятой), т.е. уменьшается шаг цены.
+                    Команда доступна только если этот инструмент поддерживает изменение
+                    шага цены.
+                    
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+
+            <Button   Content="+" FontSize="30" Padding="0,-8,0,0"
+                    VerticalAlignment="Top" Style="{StaticResource StyleButton}" />
+            <TextBlock Style="{StaticResource StyleDescription}" 
+                       Text="Увеличить точность (уменьшить шаг цены)."/>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" ToolTipService.ShowDuration="300000">
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                   При наведении мыши на стакан и нажатии кнопки увеличивается точность
+                    (количество знаков после запятой), т.е. уменьшается шаг цены.
+                     Команда доступна только если этот инструмент поддерживает изменение
+                    шага цены.
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+
+            <Button   Content="-" FontSize="30" Padding="0,-8,0,0"
+                    VerticalAlignment="Top" Style="{StaticResource StyleButton}" />
+            <TextBlock Style="{StaticResource StyleDescription}" 
+                       Text="Уменьшить точность (увеличить шаг цены)."/>
+
+        </StackPanel>
+
+
+
+
+        <StackPanel Orientation="Horizontal" ToolTipService.ShowDuration="300000">
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                   Совершается сделка "Купить" по рынку объемом, равным текущему объему.
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+
+            <Button   
+                    VerticalAlignment="Top"  Content="&#x2191;" Style="{StaticResource StyleButton}" 
+                FontSize="40" FontWeight="ExtraBold" Padding="0,-12,0,4"  />
+            <TextBlock Style="{StaticResource StyleDescription}" >
+                Рыночная заявка "Купить".
+
+            </TextBlock>
+
+        </StackPanel>
+ <!-- ====================================================================  -->
+        <StackPanel Orientation="Horizontal" ToolTipService.ShowDuration="300000">
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                   Совершается сделка "Продать" по рынку объемом, равным текущему объему.
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+
+            <Button   
+                    VerticalAlignment="Top"  Content="&#x2193;" Style="{StaticResource StyleButton}" 
+                FontSize="40" FontWeight="ExtraBold" Padding="0,-25,0,-20
+                "  />
+            <TextBlock Style="{StaticResource StyleDescription}" >
+                 Рыночная заявка "Продать".
+
+            </TextBlock>
+
+
+        </StackPanel>
+
+<!-- ============================================================================= -->
+
+        <StackPanel Orientation="Horizontal" ToolTipService.ShowDuration="300000">
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                  При нажатии левой кнопки мыши на цене в стакане, отмечается уровень
+                   для этой цены. При повторном нажатии, уровень снимается.
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+
+            <Button   Content="L" 
+                    VerticalAlignment="Top" Style="{StaticResource StyleButton}" />
+           
+            
+            <TextBlock Style="{StaticResource StyleDescription}" >
+                 Отметить уровень.
+
+            </TextBlock>
+
+
+        </StackPanel>
+
+ <!-- ============================================================================= -->
+
+        <StackPanel Orientation="Horizontal" ToolTipService.ShowDuration="300000">
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                  Когда открыта позиция, при  нажатии левой кнопки мыши на цене в стакане, 
+                    выставляется стоплосс  или тейк профит (в зависимости от того в какой
+                    части стакана относительно открытой позиции выбирается цена).                   
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+
+            <Button   Content="Z" 
+                    VerticalAlignment="Top" Style="{StaticResource StyleButton}" />
+
+
+            <TextBlock Style="{StaticResource StyleDescription}" >
+                 Stoploss/TakeProfit.
+
+            </TextBlock>
+
+        </StackPanel>
+
+        <!-- ============================================================================= -->
+
+        <StackPanel Orientation="Horizontal" ToolTipService.ShowDuration="300000">
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                  При нажатии левой кнопки мыши на цене в стакане выставляется
+                    стопордер. Если ниже рынка, то SellStop если выше рынка, то BuyStop
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+            <Button   Content="S" 
+                    VerticalAlignment="Top" Style="{StaticResource StyleButton}" />
+
+            <TextBlock Style="{StaticResource StyleDescription}" >
+                 Stoporder.
+
+            </TextBlock>
+
+        </StackPanel>
+
+        <!-- ============================================================================= -->
+        <StackPanel Orientation="Horizontal" >
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                  Выставляется, когда открыта позиция, при  нажатии левой кнопки мыши на цене.
+                   Когда убыток достигает выбранной цены, позиция "переварачивается", т.е. 
+                   старая позиция открывается по рынку и открывается по рынку новая позиция
+                    таким же объемом, но в противоположном направлении.
+                    
+                   
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+
+            <Button   Content="Q" 
+                    VerticalAlignment="Top" Style="{StaticResource StyleButton}" />
+
+
+            <TextBlock Style="{StaticResource StyleDescription}" >
+                 Инвертированный StopLoss.
+
+            </TextBlock>
+
+
+        </StackPanel>
+        <!-- ============================================================================= -->
+       
+        <StackPanel Orientation="Horizontal" >
+            <StackPanel.ToolTip>
+                <TextBlock Style="{StaticResource StyleTooltip}">                               
+                  Закрывается открытая позиция и открывается новая позиция
+                   по рынку таким же объемом но в противоположном направлении.
+
+
+                </TextBlock>
+            </StackPanel.ToolTip>
+
+
+            <Button   Content="0" 
+                    VerticalAlignment="Top" Style="{StaticResource StyleButton}" />
+
+
+            <TextBlock Style="{StaticResource StyleDescription}" >
+                 Перевернуть позицию (на цифровой клавиатуре).
+
+            </TextBlock>
+
+
+        </StackPanel>
+
+
+    </StackPanel>
+        
+    
+</Window>

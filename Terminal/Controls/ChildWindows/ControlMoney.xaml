@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="Terminal.Controls.ChildWindows.ControlMoney"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+           
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="250"
+            Background="Gainsboro"
+             >
+    <StackPanel>
+      
+     
+        <GroupBox Header="Средства" Name="AccountMoneyGroupBox" Margin="0,20,0,0">
+            <DataGrid   Name="AccountMoneyDatagrid" AutoGenerateColumns="False"  IsReadOnly="True" HorizontalAlignment="Left" Margin="0,3,0,0">
+            <DataGrid.Columns>
+                    <DataGridTextColumn Header="Площадка"  Binding="{Binding  StockExchName}" Width="Auto" />
+                    <DataGridTextColumn Header="Средства"  Binding="{Binding  money_avail, StringFormat={}{0:N}}" Width="Auto" />                
+            </DataGrid.Columns>
+        </DataGrid>
+        </GroupBox>
+
+
+
+        <GroupBox Header="Торговые счета" Name="AccountTradeGroupBox" Margin="0,20,0,0">
+            <DataGrid   Name="AccountTradeDatagrid" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Margin="0,3,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Площадка"  Binding="{Binding  name}" Width="Auto" />
+                    <DataGridTextColumn Header="Доступно"  Binding="{Binding  money_avail, StringFormat={}{0:N}}" Width="Auto" />
+                    <DataGridTextColumn Header="Просадка"  Binding="{Binding  money_sess_limit, StringFormat='0'}" Width="Auto" />
+            </DataGrid.Columns>
+        </DataGrid>
+      </GroupBox>
+    </StackPanel>
+</UserControl>

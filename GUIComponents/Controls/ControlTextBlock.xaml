@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="GUIComponents.Controls.ControlTextBlock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="50" Loaded="UserControl_Loaded">
+    <Grid  >
+
+        <Border x:FieldModifier="public" Name="BorderOfText" CornerRadius="2" Background="{Binding Path=TextBackgroundColor}"   Height="18" Width="Auto" Margin="1,1,1,1">
+            <TextBlock x:FieldModifier="public" Name="TextBlockLabel"  FontWeight="{Binding Path=TextFontWeight}"  Height="Auto" Width="Auto" Background="{Binding Path=TextBackgroundColor}" 
+                       Margin="0,2,0,0" Foreground="{Binding Path=TextForegroundColor}" TextAlignment="Center"  HorizontalAlignment="Center" 
+                       FontFamily="Arial" FontSize="{Binding Path=TextFontSize}" Text="{Binding Path=TextValue, StringFormat=TextFormat}" />
+             
+        </Border>
+       
+    </Grid>
+</UserControl>

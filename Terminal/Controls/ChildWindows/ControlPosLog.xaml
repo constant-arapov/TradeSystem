@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="Terminal.Controls.ChildWindows.ControlPosLog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Terminal.Controls"
+             xmlns:terminal="clr-namespace:Terminal"
+             xmlns:common="clr-namespace:Terminal.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <common:CConverterIntToBool x:Key="IntConv"/>
+
+        <common:CConverterDecimalToBool x:Key="DecimalConv"/>
+
+
+
+
+
+        <Style x:Key="StylePointsRow" x:Name="StylePointsRow" TargetType="DataGridRow" >
+
+            <Setter Property="Foreground" Value="White"/>
+            
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=VMClosed_Points, Converter= {StaticResource DecimalConv}}" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                   
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding Path=VMClosed_Points, Converter= {StaticResource DecimalConv}}" Value="False">
+                    <Setter Property="Background" Value="Red"/>
+                    
+                </DataTrigger>
+
+
+            </Style.Triggers>
+        </Style>
+
+
+    </UserControl.Resources>
+
+
+
+    <StackPanel>
+        <TextBox Name="TextBoxTickerName" HorizontalAlignment="Center" FontSize="10"
+                 Text="{Binding Path=TickerName}" />
+
+
+            <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+
+        
+       
+
+        <DataGrid Grid.Row="0"  Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2"  Name="PosLog"    
+                x:FieldModifier="public"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" AutoGenerateColumns="False" FontSize="10" IsReadOnly="True" Margin="0,0,0,0" ToolTip="История позиций" 
+                  LoadingRow="PosLog_LoadingRow" RowStyle="{StaticResource StylePointsRow}">
+
+               
+
+
+
+                    <DataGrid.Columns>
+                <DataGridTextColumn Header="Вр. откр"  Binding="{Binding DtOpen,  StringFormat='HH:mm:ss'}" Width="Auto" />
+                <DataGridTextColumn Header="Вр. закр"  Binding="{Binding DtClose, StringFormat='HH:mm:ss'}" Width="Auto" />
+               
+                <DataGridTextColumn Header="Напр."  Binding="{Binding BuySell}" Width="Auto" />
+                <DataGridTextColumn Header="Цена откр"  Binding="{Binding PriceOpenSt,  StringFormat='0'}" Width="Auto" />
+                <DataGridTextColumn Header="Цена закр"  Binding="{Binding PriceCloseSt,  StringFormat='0'}" Width="Auto" />
+                <DataGridTextColumn Header="К"          Binding="{Binding CloseAmountSt}" Width="Auto" />
+                <DataGridTextColumn Header="ВМ. пп"  Binding="{Binding VMClosed_Points,  StringFormat='0'}" Width="Auto" />
+                <DataGridTextColumn Header="Ком"  Binding="{Binding Fee, StringFormat='0.00'}" Width="Auto" />
+                <DataGridTextColumn Header="Доход. "  Binding="{Binding VMClosed_RUB, StringFormat='0.00'}" Width="Auto" />
+               
+
+
+
+
+
+            </DataGrid.Columns>
+          
+              
+                
+
+            </DataGrid>
+       
+
+
+    </Grid>
+
+    </StackPanel>
+
+   
+
+ 
+</UserControl>

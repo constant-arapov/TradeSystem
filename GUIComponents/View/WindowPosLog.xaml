@@ -1,0 +1,11 @@
+﻿<Window x:Class="GUIComponents.Controls.WindowPosLog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:guicomp="clr-namespace:GUIComponents.Controls"        
+        Title="История торговли" Height="500" Width="650"
+         Background="Gainsboro" >
+    <Grid>
+
+        <guicomp:ControlPosLog  x:Name="PosLogGrid" x:FieldModifier="public"/>
+    </Grid>
+</Window>

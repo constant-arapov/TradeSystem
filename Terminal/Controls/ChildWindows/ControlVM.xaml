@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Terminal.Controls.ChildWindows.ControlVM"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:Terminal.Controls.ChildWindows"
+             xmlns:terminal="clr-namespace:Terminal"
+             xmlns:common="clr-namespace:Terminal.Common"
+             d:DesignHeight="150" d:DesignWidth="300"
+             
+             >
+    <Grid>
+
+        <DataGrid Name="VM"  x:FieldModifier="public"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" AutoGenerateColumns="False" 
+                  FontSize="14" FontWeight="DemiBold"  IsReadOnly="True" Margin="0,0,0,0" ToolTip="Финрез" TargetUpdated="VM_TargetUpdated"
+                  SourceUpdated="VM_SourceUpdated" PreviewMouseDown="VM_PreviewMouseDown" SelectionChanged="VM_SelectionChanged" ColumnHeaderStyle="{StaticResource StyleDefaultDatagridColumnHeader}">
+
+            <DataGrid.Resources>
+                <common:CConverterDecimalToBool x:Key="DecimalConv" x:Name="StringConv"/>
+
+               
+
+                <Style x:Key="StyleFinrezCell" x:Name="StyleFinrezCell" TargetType="DataGridCell" >
+
+                    <Setter Property="Foreground" Value="White"/>
+
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=TotalVM, Converter= {StaticResource DecimalConv}}" Value="True">
+                            <Setter Property="Background" Value="Green"/>                                               
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding Path=TotalVM, Converter= {StaticResource DecimalConv}}" Value="False">
+                            <Setter Property="Background" Value="Red"/>
+                        </DataTrigger>
+
+
+                    </Style.Triggers>
+                </Style>
+
+
+            </DataGrid.Resources>
+
+
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Площадка" Binding="{Binding StockName}" />
+                <DataGridTextColumn Header="Финрез"   Binding="{Binding TotalVM, StringFormat='0.00'}" CellStyle="{StaticResource StyleFinrezCell }" >   
+                    
+                </DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+
+        </DataGrid>
+        
+        
+    </Grid>
+</UserControl>

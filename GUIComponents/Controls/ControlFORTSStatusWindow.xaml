@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="GUIComponents.Controls.ControlFORTSStatusWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="280"
+             xmlns:l="clr-namespace:GUIComponents.Controls"
+             Loaded="UserControl_Loaded">
+
+    <Grid Name="GridRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <!--<Button  Name="ServerTime"    Content="Server time"    Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="1" Background="{Binding Path=ServerTimeBGColor, FallbackValue='Red'}" Foreground="White" ></Button>-->
+
+        <l:ControlFORTSButton  ButtonText="Server time"      IsOK="{Binding Path=IsServerTimeAvailable}"      Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="1" Margin="0,-3,0,-3"  />
+        <l:ControlFORTSButton  ButtonText="Session"          IsOK="{Binding Path=IsSessionOnline}"            Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="1" Margin="0,-3,0,-3"  />
+        <l:ControlFORTSButton  ButtonText="User ordlog"     IsOK="{Binding Path=IsOnlineUserOrderLog}"       Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="1"  Margin="0,-3,0,-3"  />
+        <l:ControlFORTSButton  ButtonText="User deals"       IsOK="{Binding Path=IsOnlineUserDeals}"          Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="1" Margin="0,-3,0,-3"   />
+        <l:ControlFORTSButton  ButtonText="VM"               IsOK="{Binding Path=IsOnlineVM}"                 Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="1"  Margin="0,-3,0,-3"  />
+
+        <l:ControlFORTSButton  ButtonText="Position"         IsOK="{Binding Path=IsPositionOnline}"           Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="4" Grid.RowSpan="1"  Margin="0,-3,0,-3"  />
+        <l:ControlFORTSButton  ButtonText="Stock"            IsOK="{Binding Path=IsStockOnline}"              Grid.Row="3" Grid.Column="7" Grid.ColumnSpan="4" Grid.RowSpan="1" Margin="0,-3,0,-3"  />
+        <l:ControlFORTSButton  ButtonText="Deals"            IsOK="{Binding Path=IsDealsOnline}"              Grid.Row="5" Grid.Column="7" Grid.ColumnSpan="4" Grid.RowSpan="1"  Margin="0,-3,0,-3"  />
+        <l:ControlFORTSButton  ButtonText="Order control"    IsOK="{Binding Path=IsOrderControlAvailable}"    Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="4" Grid.RowSpan="1" Margin="0,-3,0,-3"  />
+
+      
+    </Grid>
+</UserControl>

@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FECC5C2-E4C3-4EF4-8752-B2FCA29F8DFC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Terminal</RootNamespace>
+    <AssemblyName>Terminal</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Terminal.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Terminal.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>terminal_all.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Release\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\CEncryptor.cs" />
+    <Compile Include="Common\CIOBinary.cs" />
+    <Compile Include="Common\CLocalAccount.cs" />
+    <Compile Include="Common\CPreRunCondChecker.cs" />
+    <Compile Include="Common\CTerminalUtil.cs" />
+    <Compile Include="Common\Delegates.cs" />
+    <Compile Include="Communication\Helpers\DBGDataRcvr.cs" />
+    <Compile Include="Controls\Market\ChildElements\CSelectionDrawer.cs" />
+    <Compile Include="Controls\Market\ChildElements\CSelectionDrawerBg.cs" />
+    <Compile Include="Controls\Market\ControlClustersHelp.cs" />
+    <Compile Include="Controls\Market\ControlDealsHelp.cs" />
+    <Compile Include="Controls\Market\ControlStockHelp.cs" />
+    <Compile Include="DataBinding\CTerminalClusterProperties.cs" />
+    <Compile Include="DataBinding\CTerminalGlobalProperties.cs" />
+    <Compile Include="Events\Data\CDataCancellAllOrders.cs" />
+    <Compile Include="Events\Data\CDataCloseAllPos.cs" />
+    <Compile Include="Events\Data\CDataCloseInstPos.cs" />
+    <Compile Include="Events\Data\CDataErrorMessage.cs" />
+    <Compile Include="Graphics\CDrawCluster.cs" />
+    <Compile Include="Graphics\CGlyphGenerator.cs" />
+    <Compile Include="Graphics\CPreDrawCluster.cs" />
+    <Compile Include="Graphics\CRendererBackground.cs" />
+    <Compile Include="Interfaces\IChildWinDataUpdater.cs" />
+    <Compile Include="ViewModels\ChildWindows\ModelDataLog.cs" />
+    <Compile Include="ViewModels\ChildWindows\ViewModelUserDeals.cs" />
+    <Compile Include="ViewModels\CLevelEl.cs" />
+    <Compile Include="ViewModels\CSelectionMode.cs" />
+    <Compile Include="Events\Data\CDataOrderType.cs" />
+    <Compile Include="TradingStructs\Clusters\CCluster.cs" />
+    <Compile Include="TradingStructs\Clusters\CClusterDate.cs" />
+    <Compile Include="TradingStructs\Clusters\CClusterPrice.cs" />
+    <Compile Include="Common\EnmTF.cs" />
+    <Compile Include="Conf\Params.cs" />
+    <Compile Include="Controls\Market\SizeObserver.cs" />
+    <Compile Include="Events\Data\CDataAddOrder.cs" />
+    <Compile Include="Events\CEventRouterViewModel.cs" />
+    <Compile Include="Events\EventsViewModel.cs" />
+    <Compile Include="Events\EvntDispMarketViewModelcs.cs" />
+    <Compile Include="Interfaces\IStockNemrable.cs" />
+    <Compile Include="ViewModels\CClusterProcessor.cs" />
+    <Compile Include="ViewModels\CUserLevels.cs" />
+    <Compile Include="ViewModels\CWorkAmount.cs" />
+    <Compile Include="ViewModels\ChildWindows\ModelStockRecord.cs" />
+    <Compile Include="Views\BaseTerminalWindow.cs" />
+    <Compile Include="DataBinding\CBasePropertyChangedKOM.cs" />
+    <Compile Include="Common\CConverter.cs" />
+    <Compile Include="Events\CEvntDispTerminal.cs" />
+    <Compile Include="Graphics\CGeomWindow.cs" />
+    <Compile Include="Controls\Market\ChildElements\ControlAmountTextBlock.xaml.cs">
+      <DependentUpon>ControlAmountTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Market\ControlClustersDP.cs" />
+    <Compile Include="Controls\Market\ControlDealsDP.cs" />
+    <Compile Include="Controls\Market\ControlStockDP.cs" />
+    <Compile Include="Controls\Market\ChildElements\ControlUserPos.xaml.cs">
+      <DependentUpon>ControlUserPos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Market\ChildElements\ControlWorkAmount.xaml.cs">
+      <DependentUpon>ControlWorkAmount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Market\ChildElements\CDOUserPos.cs" />
+    <Compile Include="Controls\Market\Settings\CMapAmountRadius.cs" />
+    <Compile Include="DataBinding\CClusterProperties.cs" />
+    <Compile Include="DataBinding\CDataBinder.cs" />
+    <Compile Include="DataBinding\CDealsProperties.cs" />
+    <Compile Include="DataBinding\CMarketProperties.cs" />
+    <Compile Include="DataBinding\CStockProperties.cs" />
+    <Compile Include="DataBinding\CTerminalCommonProperties.cs" />
+    <Compile Include="DataBinding\CTerminalDealsProperties.cs" />
+    <Compile Include="DataBinding\CTerminalProperties.cs" />
+    <Compile Include="DataBinding\CTerminalStockProperties.cs" />
+    <Compile Include="DataBinding\CUserPosProperties.cs" />
+    <Compile Include="Graphics\CColors.cs" />
+    <Compile Include="Graphics\CLevelDrawer.cs" />
+    <Compile Include="Graphics\CColorsUserPos.cs" />
+    <Compile Include="Common\Literals.cs" />
+    <Compile Include="ViewModels\ViewModelUserPos.cs" />
+    <Compile Include="TradingStructs\EnmBidAsk.cs" />
+    <Compile Include="ViewModels\TerminalViewModel.cs" />
+    <Compile Include="ViewModels\MarketViewModelPCH.cs" />
+    <Compile Include="Views\ChildWindows\AllertWindowYesNo.xaml.cs">
+      <DependentUpon>AllertWindowYesNo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\ColorSelectionWindow.xaml.cs">
+      <DependentUpon>ColorSelectionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\HotKeyWindow.xaml.cs">
+      <DependentUpon>HotKeyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\MarketSettingsWindow.xaml.cs">
+      <DependentUpon>MarketSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\VersionWindow.xaml.cs">
+      <DependentUpon>VersionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\WindowMenu.xaml.cs">
+      <DependentUpon>WindowMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindows\ControlAuthForm.xaml.cs">
+      <DependentUpon>ControlAuthForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindows\ControlAvailTickers.xaml.cs">
+      <DependentUpon>ControlAvailTickers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Market\ControlClusters.xaml.cs">
+      <DependentUpon>ControlClusters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindows\ControlConnections.xaml.cs">
+      <DependentUpon>ControlConnections.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Market\ControlDeals.xaml.cs">
+      <DependentUpon>ControlDeals.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Market\ChildElements\ControlFocusBar.xaml.cs">
+      <DependentUpon>ControlFocusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Market\ControlMarket.xaml.cs">
+      <DependentUpon>ControlMarket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindows\ControlMoney.xaml.cs">
+      <DependentUpon>ControlMoney.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Market\ControlStock.xaml.cs">
+      <DependentUpon>ControlStock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindows\ControlTickersItem.xaml.cs">
+      <DependentUpon>ControlTickersItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Market\ChildElements\ControlUserOrders.xaml.cs">
+      <DependentUpon>ControlUserOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindows\ControlVM.xaml.cs">
+      <DependentUpon>ControlVM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindows\ControlVMDetailed.xaml.cs">
+      <DependentUpon>ControlVMDetailed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Conf\CStocksVisualConf.cs" />
+    <Compile Include="Controls\Market\Settings\CSettingsControlCluster.cs" />
+    <Compile Include="Controls\Market\Settings\CSettingsControlMarket.cs" />
+    <Compile Include="Controls\Market\Settings\CSettingsControlStock.cs" />
+    <Compile Include="Graphics\CRenderer.cs" />
+    <Compile Include="TradingStructs\EnmDealDirection.cs" />
+    <Compile Include="TradingStructs\EnmOrderAction.cs" />
+    <Compile Include="Events\EventsGUI.cs" />
+    <Compile Include="TradingStructs\PortfolioGraphicData.cs" />
+    <Compile Include="TradingStructs\PortfolioOwnedOrder.cs" />
+    <Compile Include="TradingStructs\PortfolioOwnedOrderState.cs" />
+    <Compile Include="TradingStructs\CStockPosition.cs" />
+    <Compile Include="Controls\Market\Settings\CSettingsControlDeals.cs" />
+    <Compile Include="TradingStructs\CDeal.cs" />
+    <Compile Include="TradingStructs\CSettingsTrade.cs" />
+    <Compile Include="ViewModels\ChildWindows\BaseViewModelDataGridWin.cs" />
+    <Compile Include="ViewModels\ChildWindows\BaseViewModelChildWin.cs" />
+    <Compile Include="Communication\CCommunicator.cs" />
+    <Compile Include="Conf\CInstrumentConfig.cs" />
+    <Compile Include="Controls\ChildWindows\ControlDealsLog.xaml.cs">
+      <DependentUpon>ControlDealsLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ChildWindows\ControlPosLog.xaml.cs">
+      <DependentUpon>ControlPosLog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Conf\CTerminalConfig.cs" />
+    <Compile Include="CViewDispatcher.cs" />
+    <Compile Include="CViewModelDispatcher.cs" />
+    <Compile Include="ViewModels\ChildWindows\ViewModelAuth.cs" />
+    <Compile Include="ViewModels\ChildWindows\ViewModelAvailableTickers.cs" />
+    <Compile Include="ViewModels\ChildWindows\ViewModelConnection.cs" />
+    <Compile Include="ViewModels\ChildWindows\ViewModelDetailedVM.cs" />
+    <Compile Include="ViewModels\ChildWindows\ViewModelMoney.cs" />
+    <Compile Include="ViewModels\ChildWindows\ViewModelVM.cs" />
+    <Compile Include="Views\ChildWindows\AuthWindow.xaml.cs">
+      <DependentUpon>AuthWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\AvailableTickersWindow.xaml.cs">
+      <DependentUpon>AvailableTickersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\ConnectionsWindow.xaml.cs">
+      <DependentUpon>ConnectionsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\DetailedVMWindow.xaml.cs">
+      <DependentUpon>DetailedVMWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\AllertWindow.xaml.cs">
+      <DependentUpon>AllertWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\MoneyWindow.xaml.cs">
+      <DependentUpon>MoneyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\SettingsTerminalWindow.xaml.cs">
+      <DependentUpon>SettingsTerminalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChildWindows\VMWindow.xaml.cs">
+      <DependentUpon>VMWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\ChildWindows\ControlAuthForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindows\ControlAvailTickers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Market\ChildElements\ControlAmountTextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Market\ControlClusters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindows\ControlConnections.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Market\ControlDeals.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindows\ControlDealsLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Market\ChildElements\ControlFocusBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Market\ControlMarket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindows\ControlMoney.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindows\ControlPosLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Market\ControlStock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindows\ControlTickersItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Market\ChildElements\ControlUserOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindows\ControlVM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ChildWindows\ControlVMDetailed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Market\ChildElements\ControlUserPos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Market\ChildElements\ControlWorkAmount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DictionaryTerminal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\AllertWindowYesNo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\AuthWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\AvailableTickersWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\ColorSelectionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\ConnectionsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\DealsLogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\HotKeyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\VersionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CKernelTerminal.cs" />
+    <Compile Include="Communication\CDataReciever.cs" />
+    <Compile Include="Interfaces\IWindowWithDatagrids.cs" />
+    <Compile Include="Views\ViewDataUpdater.cs" />
+    <Compile Include="Views\ChildWindows\DealsLogWindow.xaml.cs">
+      <DependentUpon>DealsLogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IDataControl.cs" />
+    <Compile Include="ViewModels\ChildWindows\ViewModelDealsLog.cs" />
+    <Compile Include="ViewModels\ChildWindows\ViewModelPosLog.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\ChildWindows\DetailedVMWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\AllertWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\MoneyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\PosLogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\SettingsTerminalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\VMWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\MarketSettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ChildWindows\WindowMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ViewModels\MarketViewModel.cs" />
+    <Compile Include="Views\ChildWindows\PosLogWindow.xaml.cs">
+      <DependentUpon>PosLogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Comon\Common.csproj">
+      <Project>{F10D0D6A-2429-447F-B83F-F98BCA2DCEBE}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GUIComponents\GUIComponents.csproj">
+      <Project>{A8F53004-B500-4E35-99D8-CBF10D529BE0}</Project>
+      <Name>GUIComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Messager\Messenger.csproj">
+      <Project>{89D0AE33-C836-4525-AF24-A10ADD07727D}</Project>
+      <Name>Messenger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TCPLib\TCPLib.csproj">
+      <Project>{74B77A2D-9D7A-4FD6-A57D-AB877BDB9AA5}</Project>
+      <Name>TCPLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TradingLib\TradingLib.csproj">
+      <Project>{4FE8D81E-D820-4C10-98BC-9B947568C715}</Project>
+      <Name>TradingLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dialog_error.ico" />
+    <Resource Include="Resources\terminal.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dialog-error_3450.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\alert_5407.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Docs\Adding DP instrument.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="terminal_all.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ctc_logo_desktop_30pcnt.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <!--  <Import Project="$(KINDOFMAGIC_PATH)\KindOfMagic.targets" />-->
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\KindOfMagic.1.3.1\build\KindOfMagic.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\KindOfMagic.1.3.1\build\KindOfMagic.targets'))" />
+    <Error Condition="!Exists('..\packages\KindOfMagic.1.3.1\build\KindOfMagic.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\KindOfMagic.1.3.1\build\KindOfMagic.targets'))" />
+  </Target>
+  <Import Project="..\packages\KindOfMagic.1.3.1\build\KindOfMagic.targets" Condition="Exists('..\packages\KindOfMagic.1.3.1\build\KindOfMagic.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\KindOfMagic.1.3.1\build\KindOfMagic.targets" Condition="Exists('..\packages\KindOfMagic.1.3.1\build\KindOfMagic.targets')" />
+</Project>

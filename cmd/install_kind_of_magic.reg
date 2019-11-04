@@ -1,0 +1,4 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]
+"KINDOFMAGIC_PATH"="d:\\plaza2\\production\\Plaza2Connector\\KindOfMagic\\"

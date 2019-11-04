@@ -1,0 +1,275 @@
+﻿<Window x:Class="InstallTerminal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Установка терминала CTC." Height="600" Width="700"
+        ResizeMode="NoResize"
+        >
+    <Window.Resources>
+        <Style x:Key="StyleButton" TargetType="Button" >
+            <Setter Property="Width" Value="60" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Content" Value="Выбор"/>
+        </Style>
+
+        <Style x:Key="StyleTextBox" TargetType="TextBox">
+            <Setter Property="Margin" Value="5,0,0,0" />
+            <Setter Property="Height" Value="22"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
+
+     
+        
+       
+
+    </Window.Resources>
+
+    <Grid>
+       <!-- ====================== BEGIN STACKPANELPATHES ================================================================-->
+        <StackPanel x:Name="StackPanelPathes" Visibility="Visible">
+            <Grid Name="GridPathes" Visibility="Visible" ShowGridLines="False">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+
+
+                <GroupBox Margin="5,5,5,5" Grid.Row="0" Grid.Column="0"  >
+                    <GroupBox.Header>
+                        Каталог исполняемых файлов
+                    </GroupBox.Header>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85*"/>
+                            <ColumnDefinition Width="15*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox Grid.Column="0" Style="{StaticResource StyleTextBox}"   x:Name="TextBoxPathTerminalExec"  />
+                        <Button  Grid.Column="1" Style="{StaticResource StyleButton}"   x:Name="ButtonTerminalExec" Click="ButtonTerminalExec_Click" />
+                    </Grid>
+
+                </GroupBox>
+
+
+
+
+
+                <GroupBox Visibility="Collapsed" Margin="5,5,5,5" Grid.Row="1" Grid.Column="0" x:Name="GroupBoxRootDataPath" >
+                    <GroupBox.Header>
+                        Корневой каталог  файлов данных
+                    </GroupBox.Header>
+
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="85*"/>
+                            <ColumnDefinition Width="15*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox Grid.Column="0" Style="{StaticResource StyleTextBox}"   x:Name="TextBoxPathTerminalDataRoot" TextChanged="TextBoxPathTerminalDataRoot_TextChanged"  />
+                        <Button  Grid.Column="1" Style="{StaticResource StyleButton}"   x:Name="ButtonTerminalDataRoot" Click="ButtonTerminalDataRoot_Click"  />
+                    </Grid>
+
+                </GroupBox>
+                <GroupBox Grid.Row="2">
+                    <Grid>
+                        <Button Name="ButtonAdvanced" Width="100" Height="30" HorizontalAlignment="Right" Click="ButtonAdvanced_Click">Дополнительно</Button>
+                    </Grid>
+                </GroupBox>
+
+                <!-- BEGIN GRID TERMINAL DATA -->
+                <Grid Grid.Row="3" Name="GridTerminalData" Margin="70,0,0,0" Visibility="Collapsed">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Margin="5,5,5,5" Grid.Row="0" Grid.Column="0"  >
+                        <GroupBox.Header>
+                            Каталог конфигурации
+                        </GroupBox.Header>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85*"/>
+                                <ColumnDefinition Width="15*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox Grid.Column="0" Style="{StaticResource StyleTextBox}"  x:Name="TextBoxPathTerminalConfig" />
+                            <Button  Grid.Column="1" Style="{StaticResource StyleButton}"   x:Name="ButtonTerminaConf" Click="ButtonTerminaConf_Click" />
+                        </Grid>
+
+                    </GroupBox>
+
+
+                    <GroupBox Margin="5,5,5,5" Grid.Row="1" Grid.Column="0" >
+                        <GroupBox.Header>
+                            Каталог лог-файлов
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85*"/>
+                                <ColumnDefinition Width="15*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox Grid.Column="0" Style="{StaticResource StyleTextBox}"  x:Name="TextBoxPathLogs" />
+                            <Button  Grid.Column="1" Style="{StaticResource StyleButton}"   x:Name="ButtonLogs" Click="ButtonLogs_Click"/>
+                        </Grid>
+
+                    </GroupBox>
+
+                    <GroupBox Margin="5,5,5,5" Grid.Row="2" Grid.Column="0"  >
+                        <GroupBox.Header>
+                            Каталог торговых данных
+                        </GroupBox.Header>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85*"/>
+                                <ColumnDefinition Width="15*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox Grid.Column="0" Style="{StaticResource StyleTextBox}"  x:Name="TextBoxPathData" />
+                            <Button  Grid.Column="1" Style="{StaticResource StyleButton}"   x:Name="ButtonData" Click="ButtonData_Click"/>
+                        </Grid>
+
+                    </GroupBox>
+
+                    <GroupBox Margin="5,5,5,5" Grid.Row="3" Grid.Column="0"  >
+                        <GroupBox.Header>
+                            Каталог аварийных сообщений
+                        </GroupBox.Header>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85*"/>
+                                <ColumnDefinition Width="15*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox Grid.Column="0" Style="{StaticResource StyleTextBox}"  x:Name="TextBoxPathAlarm" />
+                            <Button  Grid.Column="1" Style="{StaticResource StyleButton}"   x:Name="ButtonAlarm" Click="ButtonAlarms_Click" />
+                        </Grid>
+
+                    </GroupBox>
+
+                    <GroupBox Margin="5,5,5,5" Grid.Row="4" Grid.Column="0"  >
+                        <GroupBox.Header>
+                            Каталог временных файлов
+                        </GroupBox.Header>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="85*"/>
+                                <ColumnDefinition Width="15*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox Grid.Column="0" Style="{StaticResource StyleTextBox}"  x:Name="TextBoxPathTemp" />
+                            <Button  Grid.Column="1" Style="{StaticResource StyleButton}"   x:Name="ButtonTemp" Click="ButtonTemp_Click"/>
+                        </Grid>
+
+                    </GroupBox>
+
+
+                </Grid>
+
+
+
+            </Grid>
+            <!--===========================END STACKPANEL PATHES =================================================================  -->
+        </StackPanel>
+
+
+        <!--========================== BEGIN STACKPANEL FLAGS ====================================================================-->
+        <StackPanel x:Name="StackPanelFlags" Visibility="Collapsed">
+         
+
+                <GroupBox x:Name="GroupBoxCheckBoxes" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,10,5,0"  >
+                    <GroupBox.Header>
+                        <TextBlock FontSize="13" Text="Перезаписать настройки" />
+                    </GroupBox.Header>
+
+                    <Grid  ShowGridLines="False" Margin="0,10,0,2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <CheckBox x:Name="checkBoxServersConf"  Grid.Row="0" Grid.Column="0" Margin="5,5,0,0" Content="Подключение к серверам" ToolTip="Адреса и порты сереров. Файл: servers.xml"  IsChecked="False" />
+                        <CheckBox x:Name="checkBoxStockVisual"  Grid.Row="0" Grid.Column="1" Margin="5,5,0,0" Content="Расположение инструментов" ToolTip="Расположение стаканов инструментов. Файл: StockVisual.xml"    IsChecked="False" />
+                        <CheckBox x:Name="checkBoxTerminalConf" Grid.Row="1" Grid.Column="0" Margin="5,5,0,0" Content="Настройки терминала"  ToolTip="Рсположение окон, оформление, автоподключение. Файл: terminal.xml " IsChecked="False" />
+                    <CheckBox x:Name="checkBoxInstrumentsConf" Grid.Row="1" Grid.Column="1" Margin="5,5,0,0" Content="Настройки инструментов"  ToolTip="Рсположение окон, оформление, автоподключение. Файлы инструментов" IsChecked="False" />
+
+                </Grid>
+                </GroupBox>
+            
+                <GroupBox Margin="5,30,5,0">
+                    
+                    <GroupBox.Header>
+                        <TextBlock FontSize="13" Text="Параметры запуска" />
+                    </GroupBox.Header>
+
+                    <StackPanel Margin="4,10,0,10">
+                    <CheckBox x:Name="checkBoxCreateShortCut"  Content="Добавить ярлык на рабочий стол" IsChecked="True"  />
+                   <!-- <CheckBox Content="Добавить на панель быстрого запуска" Margin="0,6,0,0" IsChecked="False" />-->
+                        
+                </StackPanel>
+                    
+                    
+                </GroupBox>
+            
+            
+  
+           
+        </StackPanel>
+        <!--========================== END STACKPANEL FLAGS ====================================================================-->
+
+        <!--========================== BEGIN STACKPANEL INSTALL ====================================================================-->
+        <DockPanel x:Name="StackPanelInstall" Visibility="Collapsed">
+
+            <ListBox  DockPanel.Dock="Top"    Height="400" HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Top"  Name="ListBoxMessages" Margin="5,15,5,0"
+                        FontSize="16">
+                <!--
+                <ListBox.Items>
+                    <ListBoxItem Content="Начало установки" />
+                </ListBox.Items>
+               -->
+            </ListBox> 
+
+            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                  DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Margin="0,0,0,70" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ProgressBar x:Name="ProgressBarTotal" Grid.Column="0"    Width="610" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Visibility="Visible"   />
+                <TextBlock x:Name="TextBlockProgress"  Grid.Column="1"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Text="0 %" Margin="-12,4,0,10"  Visibility="Visible"  />
+            </Grid>
+        </DockPanel>
+        <!--========================== END STACKPANEL INSTALL ====================================================================-->
+        
+        
+
+        <Button Width="85" Height="30" Content="Далее >" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,15,15"   x:Name="ButtonContinue"  Click="ButtonContinue_Click" />
+
+    </Grid>
+</Window>

@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3C65946-B347-4DA9-B19A-26DFEE121043}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASTS</RootNamespace>
+    <AssemblyName>ASTS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\ASTS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\ASTS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CASTSConv.cs" />
+    <Compile Include="Common\CBaseState.cs" />
+    <Compile Include="Common\CDictTimeStatus.cs" />
+    <Compile Include="Common\COnlineDetector.cs" />
+    <Compile Include="Conf\ConfASTSConnector.cs" />
+    <Compile Include="Conf\CConfConnection.cs" />
+    <Compile Include="Connector\CASTSConnection.cs" />
+    <Compile Include="Connector\CASTSConnectorDouble.cs" />
+    <Compile Include="Connector\CASTSConnectorSingle.cs" />
+    <Compile Include="DealingServer\CASTSDealingServer.cs" />
+    <Compile Include="Connector\CBaseASTSConnector.cs" />
+    <Compile Include="DealingServer\CDealBoxASTS.cs" />
+    <Compile Include="CDictTrdTimeTypes.cs" />
+    <Compile Include="DealingServer\CPosistionsBoxASTS.cs" />
+    <Compile Include="DealingServer\Session\CSessionEventASTS.cs" />
+    <Compile Include="DealingServer\Session\State\CBaseStateSession.cs" />
+    <Compile Include="DealingServer\Session\CSessionBoxASTS.cs" />
+    <Compile Include="DealingServer\CStockStructAsts.cs" />
+    <Compile Include="DealingServer\Session\State\CStateSess_ ClosePeriod.cs" />
+    <Compile Include="DealingServer\Session\State\CStateSess_OpenPeriod.cs" />
+    <Compile Include="DealingServer\Session\State\CStateSess_Clearing.cs" />
+    <Compile Include="DealingServer\Session\State\CStateSess_NonActive.cs" />
+    <Compile Include="DealingServer\Session\LSessionEvents.cs" />
+    <Compile Include="DealingServer\Session\LSessionStatus.cs" />
+    <Compile Include="DealingServer\Session\State\CStateSess_NormalTrading.cs" />
+    <Compile Include="DealingServer\Stocks\CStockConverterASTS.cs" />
+    <Compile Include="DealingServer\Stocks\CStockStructASTS.cs" />
+    <Compile Include="DealingServer\CUserDealsPosBoxASTS.cs" />
+    <Compile Include="DealingServer\CUserOrderBoxASTS.cs" />
+    <Compile Include="Interfaces\Clients\ICleintState.cs" />
+    <Compile Include="Interfaces\Interactions\IDealingServerForPositions.cs" />
+    <Compile Include="Interfaces\Clients\IClientPositionsBoxASTS.cs" />
+    <Compile Include="Interfaces\Interactions\IDealingServerFotClientRM_Holds .cs" />
+    <Compile Include="Interfaces\Clients\IClientSessionState.cs" />
+    <Compile Include="Interfaces\Clients\IClientUserOrdeBoxASTS.cs" />
+    <Compile Include="Interfaces\Interactions\IDealingServerForASTSConnector.cs" />
+    <Compile Include="Connector\State\CBaseStateConnector.cs" />
+    <Compile Include="Connector\CSnapshoter.cs" />
+    <Compile Include="Connector\State\CStateConnector_Connected.cs" />
+    <Compile Include="Connector\State\CStateConnector_Disconnected.cs" />
+    <Compile Include="Common\ErrorCodes.cs" />
+    <Compile Include="Interfaces\Clients\IClientSnapshoter.cs" />
+    <Compile Include="Interfaces\Clients\IClientTransactor.cs" />
+    <Compile Include="Interfaces\Interactions\IDealingServerForTableOrders.cs" />
+    <Compile Include="Interfaces\Interactions\IDealingServerForTableSysTime.cs" />
+    <Compile Include="Interfaces\Interactions\IDealingServerForTrades.cs" />
+    <Compile Include="Interfaces\IState.cs" />
+    <Compile Include="Interfaces\IStateConnector.cs" />
+    <Compile Include="Connector\State\CStateConnector_Off.cs" />
+    <Compile Include="DealingServer\Stocks\CStockBoxASTS.cs" />
+    <Compile Include="Interfaces\Interactions\IDealingServerForTableExt_OrderBook.cs" />
+    <Compile Include="Tables\CTableAll_Trades.cs" />
+    <Compile Include="Tables\CTableMarkets.cs" />
+    <Compile Include="Tables\CTableExt_OrderBook.cs" />
+    <Compile Include="Connector\CTransactor.cs" />
+    <Compile Include="Common\DelegatePrototypes.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StubAlarmer.cs" />
+    <Compile Include="Tables\CBaseTable.cs" />
+    <Compile Include="Tables\CTableOrders.cs" />
+    <Compile Include="Tables\CTablePositions.cs" />
+    <Compile Include="Tables\CTableRecord.cs" />
+    <Compile Include="Tables\CTableRM_Holds.cs" />
+    <Compile Include="Tables\CTableSecurities.cs" />
+    <Compile Include="Tables\CTableSysTime.cs" />
+    <Compile Include="Tables\CTableTrades.cs" />
+    <Compile Include="Tables\CTableTradeTimes.cs" />
+    <Compile Include="Tables\CTableTrdTimeTypes.cs" />
+    <Compile Include="Interfaces\Interactions\IDealingServerForASTSAllTrades.cs" />
+    <Compile Include="Tables\CTable_Stats.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComonentFactory\ComonentFactory.csproj">
+      <Project>{6A44C761-C7BB-4F54-A6F2-38E07FB03993}</Project>
+      <Name>ComonentFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comon\Common.csproj">
+      <Project>{F10D0D6A-2429-447F-B83F-F98BCA2DCEBE}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBCommunicator\DBCommunicator.csproj">
+      <Project>{2E8BDA57-0E66-43F1-B20D-6B37AD7AB71D}</Project>
+      <Name>DBCommunicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MOEX.ASTS.Client\MOEX.ASTS.Client.csproj">
+      <Project>{D74D8A71-EA28-49C5-8CAB-8F03F6AFB210}</Project>
+      <Name>MOEX.ASTS.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TradingLib\TradingLib.csproj">
+      <Project>{4FE8D81E-D820-4C10-98BC-9B947568C715}</Project>
+      <Name>TradingLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1 @@
+schtasks /create /tn mysql_backup_atfs_crypto_2_58 /SC DAILY  /TR "e:\production\Crypto\Plaza2Connector\Plaza2Connector\MySQLDumper\bin\x64\Release\MySQLDumper.exe atfs_crypto" /ST 02:58

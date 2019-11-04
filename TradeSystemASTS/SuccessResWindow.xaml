@@ -1,0 +1,16 @@
+﻿<Window x:Class="TradeSystemASTS.SuccessResWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="" Height="200" Width="200"
+        WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            Пароль был успешно изменен.
+        </TextBlock>
+        <Button Grid.Row="1" Height="25" Width="80" VerticalAlignment="Center" Margin="0,10,0,0" Click="Button_Click">OK</Button>
+    </Grid>
+</Window>

@@ -1,0 +1,268 @@
+﻿<Window x:Class="Terminal.Views.ChildWindows.SettingsTerminalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Настройки терминала" Height="450" Width="350"
+        Closed="Window_Closed"
+        Loaded="Window_Loaded"
+        WindowStyle="ToolWindow"
+        ResizeMode="NoResize"
+        >
+    <Window.Resources>
+        
+        <Style TargetType="TextBlock" x:Name="StyleTextBlockLabel" x:Key="StyleTextBlockLabel">
+            <Setter Property="HorizontalAlignment"  Value="Right"/>
+            <Setter Property="Margin" Value="0,0,10,0" />
+            <Setter Property="FontSize" Value="13" />
+        </Style>
+
+        <Style TargetType="Button" x:Name="StyleButtonColor" x:Key="StyleButtonColor">
+            <Setter Property="Focusable" Value="False" />
+            <Setter Property="Width" Value="60" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+
+
+        <Style TargetType="Button" x:Name="StyleCloseButton" x:Key="StyleCloseButton" >
+            <Setter Property="Width" Value="80" />
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Content" Value="Закрыть" />
+            <Setter Property="Margin" Value="0,0,10,10" />
+        </Style>
+
+
+        <Style TargetType="TextBox" x:Name="StyleTextBoxValue" x:Key="StyleTextBoxValue">
+            <Setter Property="Background" Value="Gainsboro" />
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Margin" Value="0,1,0,1"/>
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+
+
+        <Style TargetType="TextBlock" x:Name="StyleSpeedTextBlockLabel" x:Key="StyleSpeedTextBlockLabel">
+            <Setter Property="HorizontalAlignment"  Value="Right"/>
+            <Setter Property="Width" Value="250" />
+            <Setter Property="Margin" Value="0,0,10,0" />
+            <Setter Property="FontSize" Value="13" />
+        </Style>
+
+
+
+    </Window.Resources>
+    
+    
+    <Grid>
+        
+        
+        
+        
+        
+        <TabControl>
+            
+            
+            
+            
+            
+            
+            
+            <!-- Tab item ___________________________________________________________________________________________________________________________________________________________________ -->
+            <TabItem Header="Оформление">
+                <DockPanel Margin="0,10,0,0" VerticalAlignment="Top" >
+            <!--  Line _________________________________________________________________________________________________________ -->
+                    <Grid ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">             
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"  Text="Цвет фона" Style="{StaticResource StyleTextBlockLabel}"/>
+                        <Button Name="BttnBackground"  Grid.Column="1"   Style="{StaticResource StyleButtonColor}"  Background="{Binding Path=Background}" Click="CallColorWindowClick"></Button>
+                    </Grid>
+
+            <!--  Line _________________________________________________________________________________________________________ -->
+                    <Grid ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"  Text="Цвет шрифта" Style="{StaticResource StyleTextBlockLabel}"/>
+                        <Button Name="BttnFontColor"  Grid.Column="1"  Style="{StaticResource StyleButtonColor}"  Background="{Binding Path=FontColor}" Click="CallColorWindowClick"></Button>
+                    </Grid>
+
+
+           <!--  Line _________________________________________________________________________________________________________ -->
+                    <Grid ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"  Text="Bid" Style="{StaticResource StyleTextBlockLabel}"/>
+                        <Button Name="BttnBidColor"  Grid.Column="1"  Style="{StaticResource StyleButtonColor}"  Background="{Binding Path=BidColor}" Click="CallColorWindowClick"></Button>
+                    </Grid>
+
+
+            <!--  Line _________________________________________________________________________________________________________ -->
+                    <Grid ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"  Text="Лучший Bid" Style="{StaticResource StyleTextBlockLabel}"/>
+                        <Button Name="BttnBestBidColor"  Grid.Column="1"  Style="{StaticResource StyleButtonColor}"  Background="{Binding Path=BestBidColor}" Click="CallColorWindowClick"></Button>
+                    </Grid>
+
+          <!--  Line _________________________________________________________________________________________________________ -->
+                    <Grid ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"  Text="Ask" Style="{StaticResource StyleTextBlockLabel}"/>
+                        <Button Name="BttnAskColor"  Grid.Column="1"  Style="{StaticResource StyleButtonColor}"  Background="{Binding Path=AskColor}" Click="CallColorWindowClick"></Button>
+                    </Grid>
+
+
+                    <!--  Line _________________________________________________________________________________________________________ -->
+                    <Grid ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"  Text="Лучший Ask" Style="{StaticResource StyleTextBlockLabel}"/>
+                        <Button Name="BttnBestAskColor"  Grid.Column="1"  Style="{StaticResource StyleButtonColor}"  Background="{Binding Path=BestAskColor}" Click="CallColorWindowClick"></Button>
+                    </Grid>
+
+
+                    <!--  Line _________________________________________________________________________________________________________ -->
+                    <Grid ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"  Text="Полоса объема" Style="{StaticResource StyleTextBlockLabel}"/>
+                        <Button Name="BttnVolumeBarColor"  Grid.Column="1"  Style="{StaticResource StyleButtonColor}"  Background="{Binding Path=VolumeBarColor}" Click="CallColorWindowClick"></Button>                        
+                    </Grid>
+
+                    <!--  Line _________________________________________________________________________________________________________ -->
+                    <Grid ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"  Text="Большой объем" Style="{StaticResource StyleTextBlockLabel}"/>
+                        <Button Name="BttnBigVolumeColor"  Grid.Column="1"  Style="{StaticResource StyleButtonColor}"  Background="{Binding Path=BigVolumeColor}" Click="CallColorWindowClick"></Button>
+                    </Grid>
+
+
+                    <!--  Line _________________________________________________________________________________________________________ -->
+                    <Grid ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"  Text="Линия уровень 1 цвет " Style="{StaticResource StyleTextBlockLabel}"/>
+                        <Button Name="BttnLineL1Color"  Grid.Column="1"  Style="{StaticResource StyleButtonColor}"  Background="{Binding Path=LineL1Color}" Click="CallColorWindowClick"></Button>
+                    </Grid>
+
+                    <!--  Line _________________________________________________________________________________________________________ -->
+                    <Grid ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"  Text="Линия уровень 2 цвет " Style="{StaticResource StyleTextBlockLabel}"/>
+                        <Button Name="BttnLineL2Color"  Grid.Column="1"  Style="{StaticResource StyleButtonColor}"  Background="{Binding Path=LineL2Color}" Click="CallColorWindowClick"></Button>
+                    </Grid>
+
+
+
+
+
+                </DockPanel>
+
+
+            </TabItem>
+
+
+
+            <!-- Tab item ___________________________________________________________________________________________________________________________________________________________________ -->
+            <TabItem Header="Скорость">
+                <DockPanel  VerticalAlignment="Top" Margin="0,10,0,0">
+                    <!-- Line 1 -->
+                    <Grid DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,5,0,0">                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="*"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" HorizontalAlignment="Left"   Text="Обновлений СТАКАНА за секунду" Style="{StaticResource StyleSpeedTextBlockLabel}" />
+
+                        <TextBox  Grid.Row="0" Grid.Column="1" x:Name="TextBlockStockUpdatePerSec"  Text="{Binding Path=StockUpdatePerSec, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Style="{StaticResource StyleTextBoxValue}"  />
+                                        
+                    </Grid>
+
+
+                    <!-- Line 2 -->
+                    <Grid DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,5,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="*"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.RowSpan="1" Grid.Column="0" HorizontalAlignment="Left"  Text="Обновлений КЛАСТЕРОВ за секунду" Style="{StaticResource StyleSpeedTextBlockLabel}" />
+
+                        <TextBox  Grid.Row="0" Grid.Column="1" x:Name="TextBlockClusterUpdatePerSec"  Text="{Binding Path=ClustersUpdatePerSec, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Style="{StaticResource StyleTextBoxValue}"  />
+                                         
+                                                                                                                          
+
+                    </Grid>
+
+
+
+              
+
+                </DockPanel>
+            </TabItem>
+
+
+            <!-- Tab item ___________________________________________________________________________________________________________________________________________________________________ -->
+            <TabItem Header="Общие">
+                <DockPanel  VerticalAlignment="Top" Margin="0,10,0,0">
+                    <!-- Line 1 -->
+                    <Grid DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,5,0,0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="*"/>
+                            <ColumnDefinition  Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Автоподключение" Style="{StaticResource StyleTextBlockLabel}" />
+                        <CheckBox Grid.Row="0" Grid.RowSpan="1" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Path=NeedAutoConnection,Mode=TwoWay}"/>
+
+                        <!--<TextBox  Grid.Row="0" Grid.Column="1" x:Name="TextBlockStockUpdatePerSec"  Text="{Binding Path=StockUpdatePerSec, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"   Style="{StaticResource StyleTextBoxValue}"  />-->
+
+                    </Grid>
+                    <GroupBox  DockPanel.Dock="Top" Height="80" Header="Обновление терминала" Margin="0,10,0,0">
+                        <Button Width="80" Height="25" Content="Обновить" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                          Margin="0,0,5,2"      />
+                    </GroupBox>
+
+
+
+
+
+                </DockPanel>
+            </TabItem>
+
+
+
+
+        </TabControl>
+
+        <Button x:Name="CloseButton" Style="{StaticResource StyleCloseButton}" Click="CloseButton_Click" />
+
+
+    </Grid>
+
+
+
+</Window>

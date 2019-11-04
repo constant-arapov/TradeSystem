@@ -1,0 +1,11 @@
+﻿<local:BaseTerminalWindow
+        x:Class="Terminal.Views.ChildWindows.PosLogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Terminal.Views"
+        xmlns:controls="clr-namespace:Terminal.Controls"
+        Title="История изм. позиции" Height="300" Width="450">
+    <StackPanel  x:Name="StackPanelMain">
+        <!--<controls:ControlPosLog x:Name="PosLogGrid"></controls:ControlPosLog>-->
+    </StackPanel>
+</local:BaseTerminalWindow>

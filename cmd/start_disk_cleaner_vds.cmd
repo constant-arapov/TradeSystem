@@ -1,0 +1,1 @@
+e:\ATFS\Exec\DiskCleaner\DiskCleaner.exe 50

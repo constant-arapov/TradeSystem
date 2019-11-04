@@ -1,0 +1,90 @@
+﻿<Window x:Class="TradeManager.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Нстройки" Height="400" Width="400"
+        WindowStyle="ToolWindow">
+    
+    <Window.Resources>
+        <Style x:Name="StyleTextBlockLabel" x:Key="StyleTextBlockLabel" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment"  Value="Right"/>
+            <Setter Property="Margin" Value="0,0,10,0" />
+            <Setter Property="FontSize" Value="13" />
+        </Style>
+
+        <Style  x:Name="StyleTextBoxValue" x:Key="StyleTextBoxValue" TargetType="TextBox">
+           
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="Padding" Value="0,-2,0,0"/>
+            
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+
+        <Style  x:Name="StylePasswordBox" x:Key="StylePasswordBox" TargetType="PasswordBox">
+
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="Padding" Value="0,-2,0,0"/>
+
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+
+
+
+    </Window.Resources>
+    
+    
+        
+    <DockPanel>
+      
+        <Button DockPanel.Dock="Bottom" Width="75" Height="27" 
+                VerticalAlignment="Bottom" Content="Закрыть" 
+                HorizontalAlignment="Right" Margin="0,0,5,5" Click="Button_Click_1" />
+
+        <TabControl DockPanel.Dock="Top" Margin="2,2,2,5" >
+            <TabItem  Header="Аккаунт" >
+                <DockPanel Margin="0,0,0,80" VerticalAlignment="Center" >
+                    <Grid x:Name="GridAccount" ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock  Grid.Column="0"  Text="Пользователь" Style="{StaticResource StyleTextBlockLabel}" />
+
+                        <TextBox   x:Name="TextBoxUser" Grid.Column="1" Width="100"  Style="{StaticResource StyleTextBoxValue}"  
+                            Text="{Binding Path=User,Mode=OneWay}"     />
+                    </Grid>
+
+                    <Grid ShowGridLines="False" DockPanel.Dock="Top" Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0"  Text="Пароль" Style="{StaticResource StyleTextBlockLabel}"  />
+                        <PasswordBox x:Name="PasswordBoxPasswod" Grid.Column="1" Width="100"  Style="{StaticResource StylePasswordBox}" 
+                                    />                      
+                    </Grid>
+                    
+                    <Button x:Name="ButtonAccountApply" DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="0,15,15,0"
+                            Width="80" Height="28" Content="Применить" Click="Button_Click" />
+                    
+                    
+
+
+                </DockPanel>
+
+
+
+            </TabItem>
+
+
+        </TabControl>
+    </DockPanel>
+</Window>

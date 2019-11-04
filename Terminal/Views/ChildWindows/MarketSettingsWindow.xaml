@@ -1,0 +1,300 @@
+﻿<Window x:Class="Terminal.Views.MarketSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Настройки инструмента" Height="300" Width="300"
+        WindowStyle="ToolWindow"
+        Closed="Window_Closed">
+    <!-- Styles  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <Window.Resources>
+      
+        <Style TargetType="TextBlock" x:Name="StyleTextBlockLabel" x:Key="StyleTextBlockLabel">
+            <Setter Property="HorizontalAlignment"  Value="Right"/>
+            <Setter Property="Margin" Value="0,0,10,0" />            
+        </Style>
+
+        <Style TargetType="TextBlock" x:Name="StyleTextBlockValue" x:Key="StyleTextBlockValue">
+            <Setter Property="Background" Value="Gainsboro" />
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Margin" Value="0,1,0,1"/>
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="TextBox" x:Name="StyleTextBoxValue" x:Key="StyleTextBoxValue">
+            <Setter Property="Background" Value="Gainsboro" />
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Margin" Value="0,1,0,1"/>
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+
+
+
+        <Style TargetType="Button" x:Name="StyleUpDownButton" x:Key="StyleUpDownButton">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="12" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Padding" Value="0,-5" />
+            
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Gainsboro" BorderThickness="1" BorderBrush="Black">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-5,0,0"  />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Name="StyleCloseButton" x:Key="StyleCloseButton" >
+            <Setter Property="Width" Value="80" />
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalAlignment" Value="Right" />            
+            <Setter Property="Content" Value="Закрыть" />
+            <Setter Property="Margin" Value="0,0,10,10" />
+        </Style>
+
+
+
+
+    </Window.Resources>
+
+    <!-- END Styles  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <Grid>    
+    <TabControl>
+        <!-- Tab item ___________________________________________________________________________________________________________________________________________________________________ -->
+        <TabItem Header="Оформление">
+             <DockPanel Margin="0,10,0,0">
+                 <!-- Line 1 -->
+                <Grid DockPanel.Dock="Top">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>               
+                     </Grid.RowDefinitions>
+                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                     </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Высота строки" Style="{StaticResource StyleTextBlockLabel}" />
+                        <DockPanel Grid.Row="0"  Grid.Column="1"  >
+                            <TextBlock  x:Name="TextBoxTextPriceSize"  Text="{Binding Path=StringHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                    Style="{StaticResource StyleTextBlockValue}"  />
+                            <StackPanel DockPanel.Dock="Right" >
+                                   <Button Content="+" Style="{StaticResource StyleUpDownButton}" Click="TextPriceSize_Up"  />
+                                   <Button Content="-" Style="{StaticResource StyleUpDownButton}" Click="TextPriceSize_Down" />
+                           </StackPanel>
+                        </DockPanel>
+
+               </Grid>
+                <!-- END Line 1 -->
+                <!-- Line 2 -->
+                <Grid DockPanel.Dock="Top">
+                       <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+               </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Размер шрифта" Style="{StaticResource StyleTextBlockLabel}" />
+                    <DockPanel Grid.Row="0"  Grid.Column="1"  >
+                           <TextBlock  x:Name="TextBoxFontSize"  Text="{Binding Path=FontSize, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                Style="{StaticResource StyleTextBlockValue}"  />
+                            <StackPanel DockPanel.Dock="Right">
+                                <Button    Content="+" Style="{StaticResource StyleUpDownButton}" Click="TextFontSize_Up"  />
+                                <Button    Content="-" Style="{StaticResource StyleUpDownButton}" Click="TextFonSize_Down" />
+                        </StackPanel>
+                  </DockPanel>
+                </Grid>
+               <!-- END Line 2 -->
+            </DockPanel>
+        </TabItem>
+       <!-- End tab item ___________________________________________________________________________________________________________________________________________________________________ -->
+
+
+
+
+
+   
+         <!-- Tab item _________________________________________________________________________________________________________________________________________________________________________ -->
+        <TabItem Header="Торговля">
+
+                <DockPanel Margin="0,15,0,0">
+                    
+                    <Grid DockPanel.Dock="Top" ShowGridLines="False">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Дальность заброса лимитки, шагов" Style="{StaticResource StyleTextBlockLabel}"  />
+                        <TextBox   Grid.Row="0" Grid.Column="1" Text="{Binding Path=ThrowSteps, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Style="{StaticResource StyleTextBoxValue}" HorizontalAlignment="Left" Width="40" />
+
+                    </Grid>
+
+
+
+
+
+
+                </DockPanel>
+            </TabItem>
+       <!-- End tab item ___________________________________________________________________________________________________________________________________________________________________ -->
+
+
+       <!-- Tab item _________________________________________________________________________________________________________________________________________________________________________ -->
+
+        <TabItem Header="Стакан">
+                <DockPanel Margin="0,10,0,0">
+                    <Grid DockPanel.Dock="Top">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Объем заполн. полосы" Style="{StaticResource StyleTextBlockLabel}" />
+                        <TextBox   Grid.Row="0" Grid.Column="1" Text="{Binding Path=VolumeFullBar, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Style="{StaticResource StyleTextBoxValue}" Width="60" HorizontalAlignment="Left"/>
+
+                    </Grid>
+
+                    <Grid DockPanel.Dock="Top">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Большой объем" Style="{StaticResource StyleTextBlockLabel}" />
+                        <TextBox   Grid.Row="0" Grid.Column="1" Text="{Binding Path=BigVolume, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Style="{StaticResource StyleTextBoxValue}" Width="60" HorizontalAlignment="Left" />
+                        
+
+                    </Grid>
+
+                    <Grid DockPanel.Dock="Top">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Кратн. основных уровней" Style="{StaticResource StyleTextBlockLabel}" />
+                        <DockPanel Grid.Row="0"  Grid.Column="1" HorizontalAlignment="Left" >
+                            <TextBlock  x:Name="TextBoxLevel1Mult"  Text="{Binding Path=Level1Mult, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                    Style="{StaticResource StyleTextBlockValue}" Width="40" />
+                            <StackPanel DockPanel.Dock="Right" >
+                                <Button Content="+" Style="{StaticResource StyleUpDownButton}" Click="TextBoxLevel1Mult_Up"  />
+                            <Button Content="-" Style="{StaticResource StyleUpDownButton}" Click="TextBoxLevel1Mult_Down" />
+                            </StackPanel>
+                        </DockPanel>                                                                                                                       
+                    </Grid>
+
+
+
+                    <Grid DockPanel.Dock="Top">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Кратн. промежут. уровней" Style="{StaticResource StyleTextBlockLabel}" />
+                        <DockPanel Grid.Row="0"  Grid.Column="1" HorizontalAlignment="Left" >
+                            <TextBlock  x:Name="TextBoxLevel2Mult"  Text="{Binding Path=Level2Mult, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                    Style="{StaticResource StyleTextBlockValue}" Width="40" />
+                            <StackPanel DockPanel.Dock="Right" >
+                                <Button Content="+" Style="{StaticResource StyleUpDownButton}" Click="TextBoxLevel2Mult_Up"  />
+                                <Button Content="-" Style="{StaticResource StyleUpDownButton}" Click="TextBoxLevel2Mult_Down" />
+                            </StackPanel>
+                        </DockPanel>
+                    </Grid>
+
+
+
+
+
+
+                </DockPanel>
+            </TabItem>
+
+       <!-- End tab item ___________________________________________________________________________________________________________________________________________________________________ -->
+
+       <!-- Tab item _________________________________________________________________________________________________________________________________________________________________________ -->
+
+            <TabItem Header="Кластеры">
+                <DockPanel Margin="0,10,0,0">
+                    <Grid DockPanel.Dock="Top">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Таймфрейм" Style="{StaticResource StyleTextBlockLabel}" />
+                        <ComboBox x:Name="ComboboxTimeFrame"   Grid.Row="0" Grid.Column="1"   Width="60" SelectionChanged="ComboboxTimeFrame_SelectionChanged">
+                          
+                            <ComboBoxItem>M1</ComboBoxItem>
+                            <ComboBoxItem>M5</ComboBoxItem>
+                            <ComboBoxItem>M15</ComboBoxItem>
+                            <ComboBoxItem>M30</ComboBoxItem>
+                            <ComboBoxItem>H1</ComboBoxItem>
+
+                        </ComboBox>
+                      
+
+                    </Grid>
+
+
+
+
+
+
+                    <Grid DockPanel.Dock="Top">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Сделок заполн. полосы" Style="{StaticResource StyleTextBlockLabel}" />
+                        <TextBox   Grid.Row="0" Grid.Column="1" Text="{Binding Path=DealsAmountFullBar, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Style="{StaticResource StyleTextBoxValue}" Width="60" />
+
+                    </Grid>
+
+                  
+
+
+
+
+                </DockPanel>
+            </TabItem>
+
+         <!-- End tab item ___________________________________________________________________________________________________________________________________________________________________ -->
+
+
+
+
+
+        </TabControl>
+
+        <Button x:Name="CloseButton" Style="{StaticResource StyleCloseButton}" Click="CloseButton_Click" />
+    </Grid>
+</Window>

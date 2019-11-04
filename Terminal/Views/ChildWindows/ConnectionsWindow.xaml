@@ -1,0 +1,10 @@
+﻿<Window x:Class="Terminal.Views.ChildWindows.ConnectionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="  Подключение" Height="150" Width="290"
+        xmlns:controls="clr-namespace:Terminal.Controls.ChildWindows"
+        ResizeMode="NoResize">
+    <Grid>
+        <controls:ControlConnections x:Name="ConnectionTable" Margin="-7,0,0,0" ></controls:ControlConnections>                                             
+    </Grid>
+</Window>
